@@ -10,8 +10,6 @@ export const MediaDiv = styled.div`
         width: 100%;
     }
 `;
-/* 스타일컴포넌트 */
-
 export const HeaderDiv = styled.div`
     width: 768px;
     height: auto;
@@ -24,7 +22,6 @@ export const HeaderDiv = styled.div`
         width: 100%;
     }
 `;
-
 export const TitleLogoDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -33,26 +30,21 @@ export const TitleLogoDiv = styled.div`
     margin: 15px;
     line-height: 1;
 `;
-
 export const TitleBig = styled.span`
     font-size: 40px;
 `;
-
 export const TitleSmall = styled.span`
     font-size: 20px;
 `;
-
 export const SubHeaderDiv = styled.div`
     margin: 15px;
     font-size: 25px;
     display: flex;
     flex-direction: row;
 `;
-
 export const Main = styled.div`
     padding-top: 90px;
 `;
-
 export const SlogunSection = styled.div`
     margin-top: 10px;
     width: 100%;
@@ -61,12 +53,10 @@ export const SlogunSection = styled.div`
     justify-content: center;
     align-items: center;
 `;
-
 export const SlogunBig = styled.span`
     font-size: 40px;
     font-family: 'League Gothic', sans-serif;
 `;
-
 export const SlogunSmall = styled.span`
     margin: 3px;
     font-weight: bold;
@@ -95,12 +85,10 @@ export const PostTitle = styled.span`
     font-family: 'Black Han Sans', sans-serif;
     font-size: 25px;
 `;
-
 export const PostListDiv = styled.div`
     font-size: 16px;
     font-family: 'Noto Sans KR', sans-serif;
 `;
-
 export const LoadingDiv = styled.div`
     display: flex;
     justify-content: center;
@@ -108,11 +96,9 @@ export const LoadingDiv = styled.div`
     flex-direction: column;
     margin-top: 15px;
 `;
-
 export const LoadingImg = styled.img`
     width: 30px;
 `;
-
 export const EachPostLi = styled.li`
     margin: 14px;
     display: flex;
@@ -154,8 +140,3 @@ export const FooterBig = styled.span`
     margin: 5px;
     font-size: 12px;
 `;
-export const FooterSmall = styled.span`
-    margin: 5px;
-    font-size: 5px;
-`;
-// export default MediaDiv;
