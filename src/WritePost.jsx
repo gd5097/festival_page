@@ -1,16 +1,22 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import {
-  ContentsInput,
   PostSection,
   PostSubmit,
   PostSubmitDiv,
-  PostTitle,
-  PostTitleDiv,
   PostWriteDiv,
-  TitleInput,
 } from './styledComponent';
+import WriteTitle from './WriteTitle';
+import InputPost from './InputPost';
+import { useNavigate } from 'react-router-dom';
 
-function WritePost(props) {
+const SubmitComponent = React.memo(({onSubmit}) => (
+  <PostSubmitDiv>
+    <PostSubmit onClick={onSubmit}>작성완료</PostSubmit>
+  </PostSubmitDiv>
+));
+
+const WritePost = ({apiUrl}) => {
   // useState 만들어주기
   const [inputs, setInputs] = useState({
     title: '',
@@ -27,30 +33,29 @@ function WritePost(props) {
     });
   };
 
+  const navigate = useNavigate();
+
+  const onSubmit = () => {
+    axios.post(`${apiUrl}posts/`, {
+      title: inputs.title,
+      contents: inputs.contents,
+      repls: [],
+    }).then(() => {
+      navigate('../');
+    })
+  }
+
   return (
     <PostSection>
-      <PostTitleDiv>
-        <PostTitle>글쓰기</PostTitle>
-      </PostTitleDiv>
+
+      <WriteTitle/>
       <PostWriteDiv>
-        <TitleInput
-          name="title"
-          type="text"
-          placeholder="제목을 입력해주세요. (15자 이내)"
-          value={title}
+        <InputPost 
           onChange={onChange}
-        />
-        <ContentsInput
-          name="contents"
-          value={contents}
-          cols="30"
-          rows="10"
-          onChange={onChange}
-        ></ContentsInput>
+          title={title}
+          contents={contents}></InputPost>
       </PostWriteDiv>
-      <PostSubmitDiv>
-        <PostSubmit>작성완료</PostSubmit>
-      </PostSubmitDiv>
+      <SubmitComponent onSubmit={onSubmit}></SubmitComponent>
     </PostSection>
   );
 }

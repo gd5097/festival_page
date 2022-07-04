@@ -9,4 +9,4 @@ function Slogun() {
   );
 }
 
-export default Slogun;
+export default React.memo(Slogun);

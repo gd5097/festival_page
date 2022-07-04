@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import {
   LoadingDiv,
   LoadingImg,
@@ -35,33 +36,67 @@ const replData = [
   },
 ];
 
-const ShowPost = (props) => {
+const countRepls = (repls) => {
+  console.log('리뷰 개수를 세는 중...');
+  return repls.length;
+};
+
+const PostAndRepl = React.memo(({post,postLoading,replLoading,repls,replCount})=>{
+  return(<>
+  <PostTitleDiv>
+    <PostTitle>
+      {/* title */}
+      {post && post.title}        
+    </PostTitle>        
+  </PostTitleDiv>
+
+  {postLoading ? (
+    <LoadingDiv>
+      <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
+    </LoadingDiv>
+  ) : (
+    <PostReadDiv>{post && post.contents} </PostReadDiv>
+  )}
+
+  {/* post contents */}
+
+  <ReplTitleDiv>댓글 {replCount}</ReplTitleDiv>
+  {replLoading ? (
+    <LoadingDiv>
+      <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
+    </LoadingDiv>
+  ) : (
+    repls &&
+    repls.map((element) => (
+      <PostReplDiv key={element}>
+        <Replwriter>익명</Replwriter>
+        <Repl>{element}</Repl>
+      </PostReplDiv>
+    ))
+  )}</>)
+})
+
+const ShowPost = ({apiUrl}) => {
   const Params = useParams();
   const [post, setPost] = useState(null);
   const [repls, setRepls] = useState([]);
   const [postLoading, setPostLoading] = useState(true);
   const [replLoading, setReplLoading] = useState(true);
+  const replInput = useRef();
 
   useEffect(() => {
-    setTimeout(() => {
-      setPost(postData);
+    axios.get(`${apiUrl}posts/${Params.postID}`)
+    .then(response => {
+      setPost(response.data)
       setPostLoading(false);
-    }, 300);
-  }, []);
-  useEffect(() => {
-    setTimeout(() => {
-      setRepls(replData);
+      setRepls(response.data.repls);
       setReplLoading(false);
-    }, 1000);
+      replInput.current.focus();
+    })
   }, []);
-
+  
   // input창 상태 관리
   const [repl, setRepl] = useState('');
-
-  const countRepls = (repls) => {
-    console.log('리뷰 개수를 세는 중...');
-    return repls.length;
-  };
 
   // 이벤트가 발생하는 곳의 value 값을 setRepl로 저장
   const onChange = (e) => {
@@ -73,48 +108,34 @@ const ShowPost = (props) => {
   const replCount = useMemo(() => countRepls(repls), [repls]);
   //const replCount = countRepls(repls);
 
+  const onSubmitRepl = () => {
+    axios.post(`${apiUrl}repl/`, {
+      contents: repl,
+      post: Params.postID,
+    }).then(() => {
+      window.location.reload();
+    })
+  }
+
   if (!Params.postID) {
     return <PostSection>잘못된 접근입니다.</PostSection>;
   }
   return (
     <div>
       <PostSection>
-        <PostTitleDiv>
-          <PostTitle>
-            {/* title */}
-            {post && post.title}
-          </PostTitle>
-        </PostTitleDiv>
-
-        {postLoading ? (
-          <LoadingDiv>
-            <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
-          </LoadingDiv>
-        ) : (
-          <PostReadDiv>{post && post.contents} </PostReadDiv>
-        )}
-
-        {/* post contents */}
-
-        <ReplTitleDiv>댓글 {replCount}</ReplTitleDiv>
-        {replLoading ? (
-          <LoadingDiv>
-            <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
-          </LoadingDiv>
-        ) : (
-          repls &&
-          repls.map((element) => (
-            <PostReplDiv key={element.id}>
-              <Replwriter>익명</Replwriter>
-              <Repl>{element.contents}</Repl>
-            </PostReplDiv>
-          ))
-        )}
+        <PostAndRepl
+          post={post}
+          postLoading={postLoading}
+          replCount={replCount}
+          replLoading={replLoading}
+          repls={repls}  
+        />
 
         <WritereplDiv>
           {/* 작성한 Javascript를 통해 변화가 일어났는지를 탐지 */}
-          <ReplInput onChange={onChange} value={repl}></ReplInput>
-          <ReplSubmitDiv>
+          <ReplInput onChange={onChange} value={repl} 
+            ref={replInput}></ReplInput>
+          <ReplSubmitDiv onClick={onSubmitRepl}>
             <span>입력</span>
           </ReplSubmitDiv>
         </WritereplDiv>
