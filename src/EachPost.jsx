@@ -9,7 +9,7 @@ function EachPost({ title, postID }) {
     const navigate = useNavigate();
     
     const goPost = () => {
-        navigate(`${'/post/' + postID}`)
+        navigate(`${'/board/post/' + postID}`)
     }
     return (
         <EachPostLi onClick={goPost}>

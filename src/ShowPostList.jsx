@@ -30,7 +30,7 @@ const ShowPostList = ({apiUrl}) => {
 
   const navigate = useNavigate();
   const goWrite = () => {
-    navigate('/write');
+    navigate('/board/write');
   };
 
   const getPostList = useCallback(() => {

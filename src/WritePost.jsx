@@ -41,7 +41,7 @@ const WritePost = ({apiUrl}) => {
       contents: inputs.contents,
       repls: [],
     }).then(() => {
-      navigate('../');
+      navigate('../board');
     })
   }
 

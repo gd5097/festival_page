@@ -70,7 +70,7 @@ export const SlogunBig = styled.span`
 export const SlogunSmall = styled.span`
     margin: 3px;
     font-weight: bold;
-    color: #f39926;
+    color: #174ea0;
 `;
 export const PostSection = styled.div`
     margin: 0px auto;
@@ -83,7 +83,7 @@ export const PostTitleDiv = styled.div`
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     color: white;
-    background-color: #f39926;
+    background-color: #174ea0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -190,7 +190,7 @@ export const PagenumberDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #f39926;
+    border: 1px solid #174ea0;
     border-radius: 5px;
 `;
 export const FooterDiv = styled.div`
@@ -246,4 +246,5 @@ export const PostSubmit = styled.div`
   font-family: 'Black Han Sans', sans-serif;
   font-size: 20px;
 `;
+
 // export default MediaDiv;
