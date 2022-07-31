@@ -247,4 +247,48 @@ export const PostSubmit = styled.div`
   font-size: 20px;
 `;
 
+
+export const OpenBtn = styled.button` 
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    background-color: #F9B514;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+`;
+
+export const Modal = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+`;
+
+export const Bg = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+`;
+
+export const ModalBox = styled.div`
+    position: absolute;
+    background-color: #fff;
+    width: 80px;
+    height: 170px;
+    padding: 15px;
+    display: block;
+    margin: 0 auto;
+`;
+
+export const CloseBtn = styled.button`
+    display: block;
+    width: 80px;
+    margin: 0 auto;
+`;
 // export default MediaDiv;
