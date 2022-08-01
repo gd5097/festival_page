@@ -1,10 +1,11 @@
 import 'normalize.css';
+import 'react-circular-progressbar/dist/styles.css';
 import './styles/style.css';
 import { ThemeProvider } from '@emotion/react';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import MainPage from './pages/main';
+import MainPage from 'pages/main';
 
 const app = document.getElementById('app');
 
