@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -53,67 +53,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
+    <tr th:each="board : ${boardEntityList}">
+        <th th:text="${board.id}">1</th>
+        <td th:text="${board.title}">제목</td>
+        <td><a th:href="@{/board/{id}(id = ${board.id})}" th:text="${board.content}"></a></td>
+        <td th:text="${board.curTime}">작성 일시</td>
     </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td>지갑을 찾습니다.</td>
-        <td>김용범</td>
-        <td>2021:02:02</td>
-    </tr>
-
     </tbody>
 </table>
 
