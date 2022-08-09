@@ -3,6 +3,7 @@ package com.example.back_end_festival.Controller;
 import com.example.back_end_festival.Dto.BoardDTO;
 import com.example.back_end_festival.Entity.BoardEntity;
 import com.example.back_end_festival.Repository.BoardRepository;
+import com.example.back_end_festival.Service.BoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,9 +17,11 @@ import java.util.ArrayList;
 
 @Controller
 @Slf4j // 로깅을 사용하기 위한 어노테이션
-public class MainController {
+public class BoardController {
 
     @Autowired
+    private BoardService boardService;
+    @Autowired // 자동으로 객체를 생성해준다.
     private BoardRepository boardRepository;
 
     // 메인 홈페이지 url에 접속했을 때, templetes 폴더 안에 main_page.html 문서를 보여준다.
@@ -47,7 +50,6 @@ public class MainController {
     public String create(BoardDTO dto){
         // 1. 받은 dto 데이터를 Entity로 변환한다.
         BoardEntity boardEntity = dto.toEntity();
-
         // 2. 받은 Entity 데이터를 Repository를 통해서 DB 안에 저장한다.
         BoardEntity saved = boardRepository.save(boardEntity);
         log.info(saved.toString()); // 로깅으로 데이터 확인해보기
@@ -63,7 +65,11 @@ public class MainController {
         BoardEntity boardEntity = boardRepository.findById(id).orElse(null);
         // 2. 불러온 boardEntity 데이터를 이용하기 위해서 Model 에 저장한다.
         model.addAttribute("boardEntity", boardEntity);
-
+        assert boardEntity != null;
+        if (boardEntity.getSee() != null) {
+            boardEntity.setSee(boardEntity.getSee() + 1); // 조회수 1 증가 시켜주기
+            boardRepository.save(boardEntity); // 증가 시킨 데이터를 다시 DB에 저장해준다.
+        }
         return "board_html/single_page";
     }
 

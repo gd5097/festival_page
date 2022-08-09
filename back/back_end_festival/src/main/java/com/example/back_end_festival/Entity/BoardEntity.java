@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Entity
 @AllArgsConstructor // 모든 생성자를 대신해주는 어노테이션
@@ -23,5 +24,7 @@ public class BoardEntity {
     private String content; // 글 내용
     @Column
     private String curTime;  // 작성 일시
+    @Column
+    private Long see;  // 조회 수
 
 }
