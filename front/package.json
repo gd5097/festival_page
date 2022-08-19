@@ -1,0 +1,15 @@
+{
+  "name": "knu-festival",
+  "version": "1.0.0",
+  "description": "강원대학교 축제 홈페이지",
+  "main": "index.js",
+  "scripts": {},
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
