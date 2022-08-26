@@ -1,13 +1,13 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 
-import HelloWorldPage from './pages/hello-wolrd';
+import MainPage from './pages/main';
 
 
 function App() {
     return(        
         <Routes>
-            <Route path="/" element={<HelloWorldPage />} />            
+            <Route path="/" element={<MainPage />} />            
         </Routes>
     );
 }

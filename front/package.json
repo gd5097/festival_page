@@ -13,10 +13,13 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "parcel": "^2.7.0",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "@emotion/babel-plugin": "^11.10.2"
   },
   "dependencies": {
+    
     "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0"
