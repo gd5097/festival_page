@@ -1,11 +1,12 @@
 import React from 'react';
 import { css, useTheme } from '@emotion/react';
+import PropTypes from 'prop-types';
 
-import tempImage from '../images/back-arrow.png';
-import tempImage2 from '../images/bell.png';
-import tempImage3 from '../images/document.png';
+import backArrow from '../images/back-arrow.png';
 
-export default function Header(){
+
+
+export default function Header({ backActivated, icons}){
     const theme = useTheme();
 
     return(
@@ -23,39 +24,61 @@ export default function Header(){
                 //background-color: ${theme.colors.primary1};
                 
         `}>
-            <div
+            <button
                 // 뒤로가기
+                type='button'
+                onClick={() => {
+                    console.log('Back is Clicked!');
+                }}
                 css={css`
-                    
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
                 `}
             >
-                <img src={tempImage} css={css`
-                    object-fit: cover;
-                `}/>
-            </div>
-            <div
-                // 첫 번째 아이콘
+                { backActivated ?
+                    <img src={backArrow}
+                            css={css`
+                        object-fit: cover;
+                `}/> : null}
+            </button>
+
+            <button
+                // 2번 아이콘
+                type='button'
+                onClick={icons[1]?.onClick}
                 css={css`
                     margin-left: auto;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
                 `}
             >
                 <img
-                    src={tempImage2}
+                    src={icons[1]?.iconImage}
                     css={css`
                         object-fit: cover;
                 `}/>
-            </div>
-            <div
-                // 두 번째 아이콘
+            </button>
+
+            <button
+                // 1번 아이콘 (최우측)
+                type='button'
+                onClick={icons[0]?.onClick}
                 css={css`
                     margin-left: 30px;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
                 `}
             >
-                <img src={tempImage3} css={css`
-                    align-self: flex-end;
-                    object-fit: cover;
+                <img 
+                    src={icons[0]?.iconImage}
+                    css={css`
+                        align-self: flex-end;
+                        object-fit: cover;
                 `}/>
-            </div>
+            </button>
 
             <div
                 // 페이지 이름
@@ -75,3 +98,13 @@ export default function Header(){
         </div>
     );
 }
+
+
+Header.propTypes = {
+    backActivated: PropTypes.bool,
+    icons: PropTypes.object.isRequired,
+};
+
+Header.defaultProps = {
+    backActivated: false,
+};
