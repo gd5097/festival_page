@@ -6,7 +6,7 @@ export default function HomeBox() {
     return(
         <div css={css`
             margin: 0px auto;
-            background: white;
+            //background: white;    // for test
         `}>
             <TempButton
                 size={80}
@@ -17,6 +17,11 @@ export default function HomeBox() {
                 size={80}
                 text={'60주년관'}
                 link={'/temp'} 
+            />
+            <TempButton
+                size={80}
+                text={'게시판'}
+                link={'/community'} 
             />
         </div>
     );

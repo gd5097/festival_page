@@ -7,13 +7,22 @@ import HomeBox from '../components/home/home-box';
 
 import tempImageBell from '../images/bell.png';
 import tempImageDoc from '../images/document.png';
+import tempImageArrow from '../images/back-arrow.png';
 
 export default function HomePage() {
     return(
         <DefalutLayout>
             <Header
-                backActivated
-                icons={[
+                title={'대동제'}
+                leftIcon={
+                    {
+                        iconImage: tempImageArrow,
+                        onClick: () => {
+                            console.log("Back Icon Clicked");
+                        }
+                    }
+                }
+                rightIcons={[
                     {
                         iconImage: tempImageDoc,
                         onClick: () => {
