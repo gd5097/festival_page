@@ -1,0 +1,29 @@
+{
+  "name": "knu-festival",
+  "version": "1.0.0",
+  "description": "강원대학교 축제 홈페이지",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "prepublish": "rimraf dist",
+    "build": "parcel build src/index.html",
+    "lint": "eslint src --fix",
+    "prepare": "husky install || true"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.2",
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0",
+    "process": "^0.11.10",
+    "prop-types": "^15.8.1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
+  }
+}
