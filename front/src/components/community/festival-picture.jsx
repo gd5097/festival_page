@@ -112,7 +112,11 @@ export default function FestivalPicture() {
             {posts.map((post) => (
                 <FestivalPictureBox
                     key = {`festival-picture-${post.id}`}
-                    postInfo={post}/>
+                    postInfo={post}
+                    onClick={() => {
+                        console.log('Clicekd!');
+                    }}    
+                />
             ))}
             
 

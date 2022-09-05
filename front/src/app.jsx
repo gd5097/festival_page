@@ -4,8 +4,8 @@ import {Route, Routes} from 'react-router-dom';
 import MainPage from './pages/main';
 import HomePage from './pages/home';
 import MiraeSquarePage from './pages/mirae-square';
-import TempPage from './pages/temp';
 import CommunityPage from './pages/community';
+import AnniversaryPage from './pages/anniversary';
 
 function App() {
     return(        
@@ -13,7 +13,7 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/mirae-square" element={<MiraeSquarePage />} />
-            <Route path="/temp" element={<TempPage />} />
+            <Route path="/anniversary" element={<AnniversaryPage />} />
             <Route path="/community" element={<CommunityPage />} />
         </Routes>
     );

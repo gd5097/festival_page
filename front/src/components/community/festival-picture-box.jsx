@@ -5,13 +5,14 @@ import PropTypes from 'prop-types';
 import CommentIndicator from '../comment-indicator';
 import LikeIndicator from '../like-indicator';
 
-export default function FestivalPictureBox( {postInfo} ) {
+export default function FestivalPictureBox( {postInfo, onClick} ) {
      const theme = useTheme();
 
     return(
         <button
             // 전체 컨테이너
             type='button'
+            onClick={onClick}
             css={css`
                 display: flex;
                 flex-direction: column;
@@ -75,4 +76,5 @@ export default function FestivalPictureBox( {postInfo} ) {
 
 FestivalPictureBox.propTypes = {
     postInfo: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired,
 }

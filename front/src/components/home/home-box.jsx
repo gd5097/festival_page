@@ -16,7 +16,7 @@ export default function HomeBox() {
             <TempButton
                 size={80}
                 text={'60주년관'}
-                link={'/temp'} 
+                link={'/anniversary'} 
             />
             <TempButton
                 size={80}

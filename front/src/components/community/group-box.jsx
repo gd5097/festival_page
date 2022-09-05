@@ -3,21 +3,26 @@ import { css, useTheme } from '@emotion/react';
 import PropTypes from 'prop-types';
 import CommentIndicator from '../comment-indicator';
 
-export default function GroupBox( {postInfo} ){
+export default function GroupBox( {postInfo, onClick} ){
     const theme = useTheme();
 
     return(
-        <div
+        <button
             // 전체 컨테이너
+            type='button'
+            onClick={onClick}
             css={css`
                 display: flex;
                 flex-direction: column;
 
                 justify-content: center;
-                
+                align-items: stretch;
+                text-align: left;
+
                 row-gap: 8px;
 
                 background-color: ${theme.colors.white};
+                border: 0;
                 border-radius: 18px;
                 
                 padding: 20px 16px;
@@ -61,10 +66,11 @@ export default function GroupBox( {postInfo} ){
                 </div>
             </div>
             
-        </div>
+        </button>
     );
 }
 
 GroupBox.propTypes = {
     postInfo: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired,
 }
