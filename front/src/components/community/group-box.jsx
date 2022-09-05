@@ -31,6 +31,7 @@ export default function GroupBox( {postInfo} ){
                     font-size: 1rem;
                     font-weight: bold;
                     background-color:teal;
+                    background-color: white;
                 `}
             >
                 {postInfo.content}
