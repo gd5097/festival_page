@@ -13,6 +13,7 @@ const theme = {
     colors: {
         white: '#ffffff',
         black: '#000000',
+        gray: '#C0C0C6',
         primary1: '#12183F',
     },
 };
