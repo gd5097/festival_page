@@ -4,7 +4,7 @@ import DefalutLayout from '../layouts/default';
 import Header from '../components/header';
 
 import arrowIcon from '../images/back-arrow.png';
-import FoodList from '../components/mirae-square/food-list';
+import FoodList from '../components/anniversary/food-list';
 
 export default function AnniversaryPage() {
     return(
