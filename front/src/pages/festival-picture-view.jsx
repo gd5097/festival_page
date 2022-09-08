@@ -5,15 +5,24 @@ import Header from '../components/header';
 
 import arrowIcon from '../images/back-arrow.png';
 import FoodList from '../components/anniversary/food-list';
+import { useParams } from 'react-router-dom';
 
-export default function AnniversaryPage() {
+export default function FestivalPictureViewPage() {
 
-    
+
+
+    const params = useParams();
+    useEffect(() => {
+        console.log(params);
+        //console.log(match.params);
+     }, [])
  
     return(
+
+        
         <DefalutLayout>
             <Header 
-                title={'육십주년관'}
+                title={'축제사진'}
                 leftIcon={
                     {
                         iconImage: arrowIcon,
@@ -23,7 +32,7 @@ export default function AnniversaryPage() {
                     }
                 }
             />
-            <FoodList />
+            
             
         </DefalutLayout>
     );

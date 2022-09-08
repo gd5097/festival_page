@@ -13,7 +13,7 @@ export default function FestivalPictureBox( {postInfo} ) {
         <Link
             // 전체 컨테이너
             
-            to={`/test/:festival-post-${postInfo.id}`}
+            to={`/festival-picture-view/${postInfo.id}`}
             css={css`
                 display: flex;
                 flex-direction: column;
