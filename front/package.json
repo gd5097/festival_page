@@ -14,9 +14,11 @@
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.2",
     "@parcel/transformer-sass": "^2.7.0",
+    "husky": "^8.0.1",
     "parcel": "^2.7.0",
     "process": "^0.11.10",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
