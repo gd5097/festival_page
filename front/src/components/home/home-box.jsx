@@ -23,6 +23,11 @@ export default function HomeBox() {
                 text={'게시판'}
                 link={'/community'} 
             />
+            <TempButton
+                size={80}
+                text={'연적지'}
+                link={'/river-of-knu'} 
+            />
         </div>
     );
 }

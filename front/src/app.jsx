@@ -6,6 +6,7 @@ import HomePage from './pages/home';
 import MiraeSquarePage from './pages/mirae-square';
 import CommunityPage from './pages/community';
 import AnniversaryPage from './pages/anniversary';
+import RiverOfKnuPage from './pages/river-of-knu';
 
 function App() {
     return(        
@@ -15,6 +16,7 @@ function App() {
             <Route path="/mirae-square" element={<MiraeSquarePage />} />
             <Route path="/anniversary" element={<AnniversaryPage />} />
             <Route path="/community" element={<CommunityPage />} />
+            <Route path="/river-of-knu" element={<RiverOfKnuPage />} />
         </Routes>
     );
 }

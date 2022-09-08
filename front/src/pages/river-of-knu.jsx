@@ -1,0 +1,38 @@
+import React from 'react';
+
+import DefalutLayout from '../layouts/default';
+import Header from '../components/header';
+
+import arrowIcon from '../images/back-arrow.png';
+import homeIcon from '../images/home.png';
+
+export default function RiverOfKnuPage() {
+    return(
+        <DefalutLayout>
+            <Header 
+                title={'연적지'}
+                leftIcon={
+                    {
+                        iconImage: arrowIcon,
+                        onCLick: () => {
+                            console.log('arrow Clicked!');
+                        }
+                    }
+                }
+                rightIcons={
+                    {
+                        iconImage: homeIcon,
+                        onClick: () => {
+                            console.log('home Clicked');
+                        }
+                    }
+                }
+
+            />
+            <div>
+                연적지
+            </div>
+            
+        </DefalutLayout>
+    );
+}
