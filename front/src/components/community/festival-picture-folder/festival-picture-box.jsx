@@ -2,8 +2,8 @@ import React from 'react';
 import { css, useTheme } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-import CommentIndicator from '../comment-indicator';
-import LikeIndicator from '../like-indicator';
+import CommentIndicator from '../../comment-indicator';
+import LikeIndicator from '../../like-indicator';
 import { Link } from 'react-router-dom';
 
 export default function FestivalPictureBox( {postInfo} ) {

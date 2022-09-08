@@ -18,7 +18,7 @@ function App() {
             <Route path="/anniversary" element={<AnniversaryPage />} />
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/river-of-knu" element={<RiverOfKnuPage />} />
-            <Route path="/community/festival-picture-view/:id" element={<FestivalPictureViewPage />} />
+            <Route path="/community/festival-picture-view/:postId" element={<FestivalPictureViewPage />} />
         </Routes>
     );
 }

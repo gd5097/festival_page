@@ -6,6 +6,7 @@ import Header from '../components/header';
 import arrowIcon from '../images/back-arrow.png';
 import FoodList from '../components/anniversary/food-list';
 import { useParams } from 'react-router-dom';
+import FestivalPostBox from '../components/community/festival-picture-folder/festival-post-box';
 
 export default function FestivalPictureViewPage() {
 
@@ -32,7 +33,7 @@ export default function FestivalPictureViewPage() {
                     }
                 }
             />
-            
+            <FestivalPostBox />
             
         </DefalutLayout>
     );

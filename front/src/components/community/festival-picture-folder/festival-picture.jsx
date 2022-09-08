@@ -4,12 +4,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import FestivalPictureBox from './festival-picture-box';
 
-import FestivalIamge1 from '../../images/festival-image1.jpg';
-import FestivalIamge2 from '../../images/festival-image2.jpg';
-import FestivalImage3 from '../../images/festival-image3.jpg';
-import FestivalImage4 from '../../images/festival-image4.jpg';
-import FestivalImage5 from '../../images/festival-image5.jpg';
-import FestivalImage6 from '../../images/festival-image6.jpg';
+import FestivalIamge1 from '../../../images/festival-image1.jpg';
+import FestivalIamge2 from '../../../images/festival-image2.jpg';
+import FestivalImage3 from '../../../images/festival-image3.jpg';
+import FestivalImage4 from '../../../images/festival-image4.jpg';
+import FestivalImage5 from '../../../images/festival-image5.jpg';
+import FestivalImage6 from '../../../images/festival-image6.jpg';
 
 
 export default function FestivalPicture() {
