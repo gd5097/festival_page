@@ -26,7 +26,7 @@ export default function HomeBox() {
             <TempButton
                 size={80}
                 text={'연적지'}
-                link={'/river-of-knu'} 
+                link={'/yeonjeogji'} 
             />
         </div>
     );
