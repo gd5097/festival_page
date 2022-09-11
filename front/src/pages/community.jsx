@@ -9,7 +9,7 @@ import DocImage from '../images/document.png';
 import homeIcon from '../images/home.png';
 import NavigationButton from '../components/community/navigation-button';
 import FestivalPicture from '../components/community/festival-picture-folder/festival-picture';
-import Group from '../components/community/group';
+import Group from '../components/community/group-folder/group';
 import LostArticle from '../components/community/lost-article';
 import Suggestion from '../components/community/suggestion';
 

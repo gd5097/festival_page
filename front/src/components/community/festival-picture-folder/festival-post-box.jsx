@@ -23,13 +23,12 @@ export default function FestivalPostBox( {children} ) {
                 display: flex;
                 flex-direction: column;
 
-                
-
                 margin: 0px 20px;
+                margin-top: 20px;
             `}
         >
             <WritterBox
-                writter={'날으는 토끼'}
+                writter={'날으는토끼'}
                 time={time}
             />
             <div

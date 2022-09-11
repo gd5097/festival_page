@@ -28,7 +28,7 @@ export default function FestivalPictureBox( {postInfo} ) {
                 overflow: hidden;
 
                 width: stretch;
-                height: 60vw;
+                height: 58vw;
             `}
         >
             <div css={css`
@@ -52,9 +52,15 @@ export default function FestivalPictureBox( {postInfo} ) {
             <div
                 // 게시글 제목
                 css={css`    
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 color: ${theme.colors.black};
                 margin-top: 10px;
+
+                width: stretch;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             `}>
                 {postInfo.title}
             </div>

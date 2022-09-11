@@ -1,16 +1,16 @@
 import React from 'react';
 import { css, useTheme } from '@emotion/react';
 import PropTypes from 'prop-types';
-import CommentIndicator from '../comment-indicator';
+import CommentIndicator from '../../comment-indicator';
+import { Link } from 'react-router-dom';
 
 export default function GroupBox( {postInfo, onClick} ){
     const theme = useTheme();
 
     return(
-        <button
+        <Link
             // 전체 컨테이너
-            type='button'
-            onClick={onClick}
+            to={`/community/group-view/${postInfo.id}`}
             css={css`
                 display: flex;
                 flex-direction: column;
@@ -66,7 +66,7 @@ export default function GroupBox( {postInfo, onClick} ){
                 </div>
             </div>
             
-        </button>
+        </Link>
     );
 }
 

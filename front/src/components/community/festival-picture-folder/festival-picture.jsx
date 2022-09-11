@@ -17,7 +17,7 @@ export default function FestivalPicture() {
         {
             id: 1,
             image: FestivalIamge1,
-            title: '제에목',
+            title: '육주앞 공연보면서 찍은 사진인데',
             comments: 15,
             like: 125,
         },

@@ -8,6 +8,7 @@ import CommunityPage from './pages/community';
 import AnniversaryPage from './pages/anniversary';
 import FestivalPictureViewPage from './pages/festival-picture-view';
 import YeonjeogjiPage from './pages/yeonjeogji';
+import GroupViewPage from './pages/group-view';
 
 function App() {
     return(        
@@ -19,6 +20,7 @@ function App() {
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/yeonjeogji" element={<YeonjeogjiPage />} />
             <Route path="/community/festival-picture-view/:postId" element={<FestivalPictureViewPage />} />
+            <Route path="/community/group-view/:postId" element={<GroupViewPage />} />
         </Routes>
     );
 }
