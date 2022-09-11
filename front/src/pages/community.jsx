@@ -10,7 +10,7 @@ import homeIcon from '../images/home.png';
 import NavigationButton from '../components/community/navigation-button';
 import FestivalPicture from '../components/community/festival-picture-folder/festival-picture';
 import Group from '../components/community/group-folder/group';
-import LostArticle from '../components/community/lost-article';
+import LostArticle from '../components/community/lost-article-folder/lost-article';
 import Suggestion from '../components/community/suggestion';
 
 const Navigator = styled.div`
