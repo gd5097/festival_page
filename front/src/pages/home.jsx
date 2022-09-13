@@ -14,14 +14,6 @@ export default function HomePage() {
         <DefalutLayout>
             <Header
                 title={'대동제'}
-                leftIcon={
-                    {
-                        iconImage: tempImageArrow,
-                        onClick: () => {
-                            console.log("Back Icon Clicked");
-                        }
-                    }
-                }
                 rightIcons={[
                     {
                         iconImage: tempImageDoc,

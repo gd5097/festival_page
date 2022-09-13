@@ -10,6 +10,7 @@ import LikeIndicator from '../../like-indicator';
 import CommentIndicator from '../../comment-indicator';
 import LikeButton from './like-button';
 import ReplyBox from '../reply-folder/reply-box';
+import CommentInputBox from '../comment-input-box';
 
 
 export default function FestivalPostBox( {children} ) {
@@ -94,6 +95,7 @@ export default function FestivalPostBox( {children} ) {
                 </div>
             </div>
             <ReplyBox />
+            
         </div>
     );
 }
