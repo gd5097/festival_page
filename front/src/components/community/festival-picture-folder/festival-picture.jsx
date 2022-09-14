@@ -10,6 +10,7 @@ import FestivalImage3 from '../../../images/festival-image3.jpg';
 import FestivalImage4 from '../../../images/festival-image4.jpg';
 import FestivalImage5 from '../../../images/festival-image5.jpg';
 import FestivalImage6 from '../../../images/festival-image6.jpg';
+import PostButton from '../post-button';
 
 
 export default function FestivalPicture() {
@@ -101,27 +102,29 @@ export default function FestivalPicture() {
     ];
 
     return(
-        <div css={css`
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 8px;
-            row-gap: 16px;
+        <div>
+            <div css={css`
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 8px;
+                row-gap: 16px;
 
-            margin: 0px 20px;
-        `}>
-            {posts.map((post) => (
-                <FestivalPictureBox
-                    key = {`festival-picture-${post.id}`}
-                    postInfo={post}
-                    onClick={() => {
-                        console.log('Clicekd!');
-                    }}    
-                />
-            ))}
-            
+                margin: 0px 20px;
+            `}>
+                {posts.map((post) => (
+                    <FestivalPictureBox
+                        key = {`festival-picture-${post.id}`}
+                        postInfo={post}
+                        onClick={() => {
+                            console.log('Clicekd!');
+                        }}    
+                    />
+                ))}
+                
 
 
+            </div>
+            <PostButton size={56} link={'/community/festival-picture-view/festival-picture-write-view'}/>
         </div>
-
     );
 }

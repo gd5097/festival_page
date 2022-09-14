@@ -12,6 +12,8 @@ export default function AnniversaryPage() {
 
     return(
         <DefalutLayout>
+
+            
             <Header 
                 title={'육십주년관'}
                 leftIcon={
