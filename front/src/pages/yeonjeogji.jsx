@@ -4,15 +4,20 @@ import { css } from '@emotion/react';
 import DefalutLayout from '../layouts/default';
 import Header from '../components/header';
 
-import arrowIcon from '../images/back-arrow.png';
-import ButtonList from '../components/yeonjeogji/Headbuttons';
 
+import arrowIcon from '../images/back-arrow.png';
+import homeIcon from '../images/home.png';
+
+import ButtonList from '../components/yeonjeogji/Headbuttons';
 import Day from '../components/yeonjeogji/Day';
 import MiddleTag from '../components/yeonjeogji/MiddleTag';
 import SmallTag from '../components/yeonjeogji/SmallTag';
 import Bar from '../components/yeonjeogji/Bar';
+import { useNavigate } from 'react-router-dom';
 
 export default function YeonjeogjiPage() {
+    const navigate = useNavigate();
+
     return(
         <DefalutLayout>
             <Header 
@@ -21,10 +26,18 @@ export default function YeonjeogjiPage() {
                     {
                         iconImage: arrowIcon,
                         onClick: () => {
-                            console.log("back Icon Clicked");
+                            navigate(-1);
                         }
                     }
                 }
+                rightIcons={[
+                    {
+                        iconImage: homeIcon,
+                        onClick: () => {
+                            navigate(`/`);
+                        }
+                    },
+                ]}
             />
         <ButtonList/>
         

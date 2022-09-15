@@ -12,6 +12,7 @@ import FestivalPicture from '../components/community/festival-picture-folder/fes
 import Group from '../components/community/group-folder/group';
 import LostArticle from '../components/community/lost-article-folder/lost-article';
 import Suggestion from '../components/community/suggestion';
+import { useNavigate } from 'react-router-dom';
 
 const Navigator = styled.div`
     display: grid;
@@ -28,6 +29,7 @@ const Navigator = styled.div`
 
 export default function CommunityPage() {
     const [currentCommunity, setCurrentCommunity] = useState('festival-picture');
+    const navigate = useNavigate();
 
     return(
         <DefalutLayout>
@@ -37,7 +39,7 @@ export default function CommunityPage() {
                     {
                         iconImage: homeIcon,
                         onClick: () => {
-                            console.log("Home Icon Clicked");
+                            navigate(`/`);
                         }
                     }
                 }

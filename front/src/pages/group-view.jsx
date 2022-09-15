@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
+import { css } from '@emotion/react';
 
 import DefalutLayout from '../layouts/default';
 import Header from '../components/header';
 
 import bigMenuIcon from '../images/big-menu.png';
 import arrowIcon from '../images/back-arrow.png';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import GroupPostBox from '../components/community/group-folder/group-post-box';
+import CommentInputBox from '../components/community/comment-input-box';
 
 
 export default function GroupViewPage() {
@@ -17,6 +19,7 @@ export default function GroupViewPage() {
         //console.log(match.params);
      }, [])
  
+    const navigate = useNavigate();
     return(
         <DefalutLayout>
             <Header 
@@ -25,7 +28,7 @@ export default function GroupViewPage() {
                     {
                         iconImage: arrowIcon,
                         onClick: () => {
-                            console.log("back Icon Clicked");
+                            navigate(-1);
                         }
                     }
                 }
@@ -39,7 +42,13 @@ export default function GroupViewPage() {
                 ]}
             />
             <GroupPostBox />
-            
+            <div
+                // 댓글 입력창을 남기기 위한 여백
+                css={css`
+                    height:80px;
+                `} 
+            />
+            <CommentInputBox />
         </DefalutLayout>
     );
 }
