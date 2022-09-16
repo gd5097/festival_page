@@ -23,8 +23,6 @@ export default function FestivalPictureWriteBox() {
                 background-color: transparent;
 
                 box-sizing: border-box;
-
-                border-bottom: 1px solid rgba(255, 255, 255 ,0.2);
             `}
         >
             <input
@@ -52,6 +50,12 @@ export default function FestivalPictureWriteBox() {
                     color: ${theme.colors.white};
                     font-size: 1.1rem;
 
+                    box-sizing: border-box;
+
+                    padding-bottom: 14px;
+                    margin-bottom: 14px;
+                    border-bottom: 1px solid rgba(255, 255, 255 ,0.2);
+
                     ::placeholder {
                         font-size: 1.1rem;
                         color: rgba(255, 255, 255, 0.6);
@@ -61,9 +65,60 @@ export default function FestivalPictureWriteBox() {
                     }
 
                 `}
-            >
+            />
 
-            </input>
+            <textarea
+                // 내용 입력부
+                {...register("content",{
+                    required: "글 내용이 필요합니다.",
+                    minLength: {
+                        value: 1,
+                        message: "내용은 1글자 이상이여야 합니다."
+                    },
+                })}
+                placeholder="내용을 입력해 주세요"
+                css={css`
+                    border: 0;
+                    padding: 0;
+
+                    width: stretch;
+                    height: 200px;
+
+                    white-space: pre-wrap;
+
+                    background-color: transparent;
+                    
+                    color: ${theme.colors.white};
+
+                    box-sizing: border-box;
+                    
+                    ::placeholder {
+                        font-size: 0.9rem;
+                        color: rgba(255, 255, 255, 0.7);
+                    }
+                    :focus{
+                        outline: none;
+                    }
+                `}
+            />
+
+            <div
+                // 주의 사항 입력
+                css={css`
+                    color: rgba(255, 255, 255, 0.4);
+                    font-size: 0.8rem;
+
+                    line-height: 16px;
+                `}
+            >
+                [주의사항]<br/>
+                게시글 입력 및 주의사항 가이드를 입력<br />
+                게시글 입력 및 주의사항 가이드를 입력<br />
+                게시글 입력 및 주의사항 가이드를 입력<br />
+                게시글 입력 및 주의사항 가이드를 입력<br />
+                게시글 입력 및 주의사항 가이드를 입력<br />
+                    
+            </div>
         </form>
     );
 }
