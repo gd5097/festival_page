@@ -5,27 +5,16 @@ import WritterBox from '../writter-box';
 import moment from 'moment/moment';
 import 'moment/locale/ko';
 
-import tempImage from '../../../images/festival-image1.jpg';
-import LikeIndicator from '../../like-indicator';
-import CommentIndicator from '../../comment-indicator';
-import LikeButton from './like-button';
+import tempImage from '../../../images/lost-article-image1.png';
+
 import ReplyBox from '../reply-folder/reply-box';
 import CommentInputBox from '../comment-input-box';
+import LostIndicator from './lost-indicator';
 
 
-export default function FestivalPostBox( {children} ) {
+export default function LostArticlePostBox( {children} ) {
     const time = moment().format('DD/MM HH:MM');
     const theme = useTheme();
-
-    const post = [
-        {
-            writter: '날으는토끼',
-            time: time,
-            title: '육주앞에서 찍은 사진임',
-            content: '다들 축제 잘보내고 있어? 나는 3년만의 축제라 진짜 너무 좋아 진짜...'
-
-        }
-    ]
 
     return(
         <div
@@ -38,10 +27,26 @@ export default function FestivalPostBox( {children} ) {
                 margin-top: 20px;
             `}
         >
-            <WritterBox
-                writter={post.writter}
-                time={post.time}
-            />
+            <div
+                // 작성자 및 분실물 인디케이터 컨테이너
+                css={css`
+                    display: flex;
+
+                    align-items: center;
+                `}
+            >
+                <WritterBox
+                    writter={'날으는토끼'}
+                    time={time}
+                />
+                <div
+                    css={css`
+                        margin-left: auto;
+                    `}
+                >
+                    <LostIndicator />
+                </div>
+            </div>
             <div
                 //글 제목
                 css={css`
@@ -51,7 +56,7 @@ export default function FestivalPostBox( {children} ) {
                     margin-top: 20px;
                 `}
             >
-                {post.title}
+                육주 에어팟
             </div>
             <div
                 // 글 내용
@@ -61,7 +66,7 @@ export default function FestivalPostBox( {children} ) {
                     margin-top: 8px;
                 `}
             >
-                {post.content}
+                회색 케이스 에어팟 잃어버리신 분?
             </div>
             <div css={css`
                 // 사진 
@@ -70,6 +75,7 @@ export default function FestivalPostBox( {children} ) {
                 background-color: transparent;
                 
                 margin-top: 24px;
+                margin-bottom: 48px;
 
                 overflow: hidden;
             `}>
@@ -83,28 +89,8 @@ export default function FestivalPostBox( {children} ) {
                     `}    
                 />
             </div>
-            <div
-                // 추천수|댓글수|추천버튼 컨테이너
-                css={css`
-                    display: flex;
-
-                    column-gap: 12px;
-
-                    margin-top: 12px;
-                `}
-            >
-                <LikeIndicator number={239} color/>
-                <CommentIndicator number={18} color/>
-                <div
-                    css={css`
-                        display: flex;
-                        margin-left: auto;
-                    `}
-                >
-                    <LikeButton />
-                </div>
-            </div>
-            <ReplyBox parentName={post.writter}/>
+            
+            <ReplyBox />
             
         </div>
     );

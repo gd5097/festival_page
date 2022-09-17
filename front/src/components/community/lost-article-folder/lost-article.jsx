@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import LostArticleIamge1 from '../../../images/lost-article-image1.png';
 import LostArticleIamge2 from '../../../images/lost-article-image2.png';
 import LostArticleBox from './lost-article-box';
+import PostButton from '../post-button';
 
 export default function LostArticle() {
     const posts = [
@@ -71,6 +72,7 @@ export default function LostArticle() {
             {posts.map((post) => (
                 <LostArticleBox postInfo={post}/>
             ))}
+            <PostButton size={56} link={'/community/festival-picture-view/lost-article-write-view'}/>
         </div>
 
     );

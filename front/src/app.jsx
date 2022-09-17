@@ -11,6 +11,8 @@ import YeonjeogjiPage from './pages/yeonjeogji';
 import GroupViewPage from './pages/group-view';
 import FestivalPictureWriteView from './pages/community-write-forms/festival-picture-write-view';
 import GroupWriteView from './pages/community-write-forms/group-write-view';
+import LostArticleWriteView from './pages/community-write-forms/lost-article-write-view';
+import LostArticleViewPage from './pages/lost-article-view';
 
 function App() {
     return(        
@@ -23,8 +25,10 @@ function App() {
             <Route path="/yeonjeogji" element={<YeonjeogjiPage />} />
             <Route path="/community/festival-picture-view/:postId" element={<FestivalPictureViewPage />} />
             <Route path="/community/group-view/:postId" element={<GroupViewPage />} />
+            <Route path="/community/lost-article-view/:postId" element={<LostArticleViewPage />} />
             <Route path="/community/festival-picture-view/festival-picture-write-view" element={<FestivalPictureWriteView />} />
             <Route path="/community/festival-picture-view/group-write-view" element={<GroupWriteView />} />
+            <Route path="/community/festival-picture-view/lost-article-write-view" element={<LostArticleWriteView />} />
         </Routes>
     );
 }

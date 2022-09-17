@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import pictureIcon from '../../../images/picture.png';
 
-export default function FestivalPictureWriteBox( {pictureAbled} ) {
+export default function LostArticleWriteBox( {pictureAbled} ) {
     const { register, handleSubmit } = useForm();
     const theme = useTheme();
 
@@ -28,7 +28,64 @@ export default function FestivalPictureWriteBox( {pictureAbled} ) {
 
                 box-sizing: border-box;
             `}
-        >   
+        >
+            <div
+                // 안내 문구
+                css={css`
+                    color: ${theme.colors.white};
+                    font-size:1.1rem;
+
+                    margin-top: 24px;
+                `}
+            >
+                어떤 글을 작성하시겠어요?
+            </div>
+            <div
+                // 라디오 컨테이너
+                css={css`
+                    display: flex;
+                    column-gap: 9px;
+
+                    margin-top: 12px;
+                `}
+            >
+                <input
+                    // 분실 | 발견 라디오
+                    {...register("isLost")}
+                    type="radio"
+                    value={true}
+                    css={css`
+                        color: ${theme.colors.white};
+                    `}
+                />
+                <div
+                    css={css`
+                        color: ${theme.colors.white};
+                        font-size: 0.9rem;
+                    `}
+                >
+                    분실
+                </div>
+                <input
+                    // 분실 | 발견 라디오
+                    {...register("isLost")}
+                    type="radio"
+                    value={false}
+                    css={css`
+                        color: ${theme.colors.white};
+                        margin-left: 6px;
+                    `}
+                />
+                <div
+                    css={css`
+                    color: ${theme.colors.white};
+                    font-size: 0.9rem;
+                    `}
+                >
+                    발견
+                </div>
+            </div>
+            
             <input
                 // 제목 입력부
                 {...register("title", {
@@ -57,6 +114,7 @@ export default function FestivalPictureWriteBox( {pictureAbled} ) {
                     box-sizing: border-box;
 
                     padding-bottom: 14px;
+                    margin-top: 42px;
                     margin-bottom: 14px;
                     border-bottom: 1px solid rgba(255, 255, 255 ,0.2);
 
@@ -178,11 +236,11 @@ export default function FestivalPictureWriteBox( {pictureAbled} ) {
     );
 }
 
-FestivalPictureWriteBox.propTypes = {
+LostArticleWriteBox.propTypes = {
     pictureAbled: PropTypes.bool,
 }
 
 
-FestivalPictureWriteBox.defaultProps = {
+LostArticleWriteBox.defaultProps = {
     pictureAbled: false,
 }

@@ -1,9 +1,37 @@
 import React from 'react';
 import { css, useTheme } from '@emotion/react';
 
-import menuIcon from '../../../images/menu.png';
+import moment from 'moment/moment';
+import 'moment/locale/ko';
 
-export default function Reply( {replyInfo} ) {
+import menuIcon from '../../../images/menu.png';
+import replyIcon from '../../../images/reply-arrow.png';
+import PlusReply from './plus-reply';
+
+export default function Reply( {replyInfo, parentName} ) {
+    const time = moment().format('DD/MM HH:MM');
+
+    const plusReplies = [
+        {
+            id: 1,
+            wrriter: '날으는토끼',
+            content: '몰랑!!!',
+            postTime: time,
+        },
+        {
+            id: 2,
+            wrriter: '기어가는거북이',
+            content: '난 알지롱~',
+            postTime: time,
+        },
+        {
+            id: 3,
+            wrriter: '닐라닐라 바닐라',
+            content: '바닐라 아이스크림 맛있더라',
+            postTime: time,
+        },
+    ]
+
     return(
         <div>
             <div 
@@ -73,6 +101,53 @@ export default function Reply( {replyInfo} ) {
             >
                 {replyInfo.postTime}
             </div>
+            
+            {plusReplies?.length !== 0 ? 
+                <div 
+                // 구분선
+                css={css`
+                    width: stretch;
+                    height: 1px;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    
+                    margin-top: 12px;
+                    margin-bottom: 12px;
+                `}
+            />
+            : null}
+
+            <div
+                // 대댓글 컨테이너
+                css={css`
+                    display: flex;
+                    flex-direction: column;
+
+                    row-gap: 12px;
+                `}
+            >
+                {plusReplies.map((plusReply) => (
+                    
+                    <div
+                        // 대댓글 컨테이너
+                        css={css`
+                            display: flex;
+
+                            column-gap: 6px;
+                        `}
+                    >
+                        <div>
+                            <img src={replyIcon} />
+                        </div>
+                        
+                        <PlusReply
+                            info={plusReply}
+                            parentName={parentName}
+                        />
+                    </div>
+                ))}
+            </div>
+            
+            
             
         </div>
     );

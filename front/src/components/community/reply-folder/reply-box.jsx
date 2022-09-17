@@ -6,7 +6,7 @@ import 'moment/locale/ko';
 
 import Reply from './reply';
 
-export default function ReplyBox() {
+export default function ReplyBox( {parentName} ) {
     const time = moment().format('DD/MM HH:MM');
 
     const replies = [
@@ -52,7 +52,10 @@ export default function ReplyBox() {
             {replies.map((reply)=>(
                 <Reply
                     key={`reply-${replies.id}`}
-                    replyInfo={reply}/>
+                    replyInfo={reply}
+                    parentName={parentName}    
+                />
+                    
             ))}
         </div>
     );
