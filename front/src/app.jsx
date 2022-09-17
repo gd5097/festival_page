@@ -10,6 +10,7 @@ import FestivalPictureViewPage from './pages/festival-picture-view';
 import YeonjeogjiPage from './pages/yeonjeogji';
 import GroupViewPage from './pages/group-view';
 import FestivalPictureWriteView from './pages/community-write-forms/festival-picture-write-view';
+import GroupWriteView from './pages/community-write-forms/group-write-view';
 
 function App() {
     return(        
@@ -23,6 +24,7 @@ function App() {
             <Route path="/community/festival-picture-view/:postId" element={<FestivalPictureViewPage />} />
             <Route path="/community/group-view/:postId" element={<GroupViewPage />} />
             <Route path="/community/festival-picture-view/festival-picture-write-view" element={<FestivalPictureWriteView />} />
+            <Route path="/community/festival-picture-view/group-write-view" element={<GroupWriteView />} />
         </Routes>
     );
 }

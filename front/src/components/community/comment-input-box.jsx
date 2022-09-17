@@ -81,6 +81,7 @@ export default function CommentInputBox() {
             />
             <button
                 type="submit"
+                
                 css={css`
                     border: 0;
                     padding: 0;

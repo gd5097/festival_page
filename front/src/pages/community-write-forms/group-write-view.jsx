@@ -5,10 +5,10 @@ import Header from '../../components/header';
 
 import arrowIcon from '../../images/back-arrow.png';
 import FestivalPictureWriteBox from '../../components/community/festival-picture-folder/festival-picture-write-box';
-import WriteInputBox from '../../components/community/write-input-button';
 import { useNavigate } from 'react-router-dom';
+import GroupWriteBox from '../../components/community/group-folder/group-write-box';
 
-export default function FestivalPictureWriteView() {
+export default function GroupWriteView() {
     const navigate = useNavigate();
 
     return(
@@ -24,7 +24,7 @@ export default function FestivalPictureWriteView() {
                     }
                 }
             />
-            <FestivalPictureWriteBox pictureAbled/>
+            <GroupWriteBox />
             
         </DefalutLayout>
     );

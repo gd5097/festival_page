@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import moment from 'moment';
 import 'moment/locale/ko';
 import GroupBox from './group-box';
+import PostButton from '../post-button';
 
 export default function Group() {
     const time = moment().format('DD/MM HH:MM');
@@ -95,7 +96,9 @@ export default function Group() {
                 postInfo={post}
             />
             ))}
-        </div>
 
+            <PostButton size={56} link={'/community/festival-picture-view/group-write-view'}/>
+        </div>
+        
     );
 }
