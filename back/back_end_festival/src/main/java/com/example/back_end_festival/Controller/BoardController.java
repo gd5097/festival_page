@@ -24,7 +24,7 @@ public class BoardController {
     @Autowired // 자동으로 객체를 생성해준다.
     private BoardRepository boardRepository;
 
-    // 메인 홈페이지 url에 접속했을 때, templetes 폴더 안에 main_page.html 문서를 보여준다.
+    // 메인 홈페이지 url에 접속했을 때, templetes 폴더안에 main_page.html 문서를 보여준다.
     @GetMapping("/")
     public String main(){
         return "main_page";
