@@ -1,4 +1,5 @@
 import React from 'react';
+import { css } from '@emotion/react';
 
 import DefalutLayout from '../../layouts/default';
 import Header from '../../components/header';
@@ -13,6 +14,12 @@ export default function FestivalPictureWriteView() {
 
     return(
         <DefalutLayout>
+            <div
+                // 헤더를 위한 여백
+                css={css`
+                    height: 48px;
+                `}
+            />
             <Header 
                 title={'글 작성'}
                 leftIcon={
@@ -24,6 +31,7 @@ export default function FestivalPictureWriteView() {
                     }
                 }
             />
+            
             <FestivalPictureWriteBox pictureAbled/>
             
         </DefalutLayout>

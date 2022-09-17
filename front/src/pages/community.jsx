@@ -33,6 +33,12 @@ export default function CommunityPage() {
 
     return(
         <DefalutLayout>
+            <div
+                // 헤더를 위한 여백
+                css={css`
+                    height: 48px;
+                `}
+            />
             <Header 
                 title={'게시판'}
                 leftIcon={

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
 
 import DefalutLayout from '../layouts/default';
@@ -11,6 +11,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import FestivalPostBox from '../components/community/festival-picture-folder/festival-post-box';
 import CommentInputBox from '../components/community/comment-input-box';
 import LostArticlePostBox from '../components/community/lost-article-folder/lost-article-post-box';
+import DefaultModal from '../components/default-modal';
 
 export default function LostArticleViewPage() {
 
@@ -24,10 +25,28 @@ export default function LostArticleViewPage() {
 
     const navigate = useNavigate();
  
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [curPosition, setCurPosition] = useState([]);
+
+    const showModal = () => {
+        setModalOpen(true);
+    };
+
+    const checkCoordinate = (e) => {
+        setCurPosition([e.target.offsetLeft, e.target.offsetTop]);
+    };
+
     return(
 
         
         <DefalutLayout>
+            <div
+                // 헤더를 위한 여백
+                css={css`
+                    height: 48px;
+                `}
+            />
             <Header 
                 title={'분실물'}
                 leftIcon={
@@ -42,8 +61,9 @@ export default function LostArticleViewPage() {
                     [
                         {
                         iconImage: menuIcon,
-                        onClick: () => {
-                            console.log('menu Clicked!');
+                        onClick: (e) => {
+                            showModal();
+                            checkCoordinate(e);
                         }
                 }]}
             />
@@ -55,6 +75,29 @@ export default function LostArticleViewPage() {
                 `} 
             />
             <CommentInputBox />
+            {modalOpen && 
+                <DefaultModal
+                    setModalOpen={setModalOpen}
+                    position={curPosition}
+                    positionOffset={-5}
+                    functions={[
+                        {
+                            name: '수정',
+                            color: '#12183f',
+                            onClick: () => {
+                                console.log('Delete Clicked!');
+                            }
+                        },
+                        {
+                            name: '삭제',
+                            color: '#FF773E',
+                            onClick: () => {
+                                console.log('Plus reply Clicked!');
+                            }
+                        },
+                    ]}
+                />
+            }
         </DefalutLayout>
     );
 }

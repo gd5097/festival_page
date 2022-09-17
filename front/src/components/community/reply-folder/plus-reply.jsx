@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { css, useTheme } from '@emotion/react';
 
 import PropTypes from 'prop-types';
 
 import menuIcon from '../../../images/menu.png';
+import DefaultModal from '../../default-modal';
 
 export default function PlusReply( {info, parentName} ){
     const theme = useTheme();
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [curPosition, setCurPosition] = useState([]);
+
+    const showModal = () => {
+        setModalOpen(true);
+    };
+
+    const checkCoordinate = (e) => {
+        setCurPosition([e.target.offsetLeft, e.target.offsetTop]);
+    };
 
     return(
         <div
@@ -57,8 +69,9 @@ export default function PlusReply( {info, parentName} ){
                 <button
                     // 메뉴 아이콘
                     type='button'
-                    onClick={() => {
-                        console.log('menu Clicked!')
+                    onClick={(e) => {
+                        showModal();
+                        checkCoordinate(e);
                     }}
                     css={css`
                         background: 0;
@@ -93,7 +106,22 @@ export default function PlusReply( {info, parentName} ){
             >
                 {info.postTime}
             </div>
-            
+            {modalOpen && 
+                <DefaultModal
+                    setModalOpen={setModalOpen}
+                    position={curPosition}
+                    positionOffset={-5}
+                    functions={[
+                        {
+                            name: '삭제',
+                            color: '#FF773E',
+                            onClick: () => {
+                                console.log('Plus reply Clicked!');
+                            }
+                        },
+                    ]}
+                />
+            }
         </div>
     );
 }

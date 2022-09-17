@@ -10,15 +10,18 @@ export default function Header({ title, leftIcon, rightIcons}){
     const theme = useTheme();
 
     return(
+        
         <div 
             // 헤더 컨테이너
             css={css`
                 display: flex;
-                position: relative;
-
+                position: fixed;
+                
+                top: 0px;
                 align-items: center;
 
                 padding: 0px 22px;
+                width: stretch;
                 height: 48px;
                 
                 background-color: ${theme.colors.primary1};
@@ -31,6 +34,8 @@ export default function Header({ title, leftIcon, rightIcons}){
                 onClick={leftIcon?.onClick}
                 css={css`
                     background-color: transparent;
+                    
+                    
                     border: 0;
                     padding: 0;
                 `}
@@ -61,7 +66,7 @@ export default function Header({ title, leftIcon, rightIcons}){
                 `}/>
             </button>
 
-             : null
+            : null
             }
             
             {rightIcons !== null ?  
@@ -98,6 +103,7 @@ export default function Header({ title, leftIcon, rightIcons}){
             </div>
 
             
+        
         </div>
     );
 }
