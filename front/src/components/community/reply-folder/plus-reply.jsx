@@ -22,7 +22,7 @@ export default function PlusReply( {info, parentName} ){
             `}
         >
 
-<div
+            <div
                 // 댓글 작성자 닉네임 및 메뉴 버튼 컨테이너
                 css={css`
                     display: flex;
@@ -40,7 +40,7 @@ export default function PlusReply( {info, parentName} ){
                         font-size: 0.9rem;
                     `}
                     >
-                        {info.wrriter}
+                        {info.wrriter}(작성자)
                     </div>
                 : 
                     <div

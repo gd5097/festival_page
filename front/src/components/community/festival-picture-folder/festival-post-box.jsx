@@ -17,15 +17,15 @@ export default function FestivalPostBox( {children} ) {
     const time = moment().format('DD/MM HH:MM');
     const theme = useTheme();
 
-    const post = [
+    const post = 
         {
             writter: '날으는토끼',
             time: time,
             title: '육주앞에서 찍은 사진임',
             content: '다들 축제 잘보내고 있어? 나는 3년만의 축제라 진짜 너무 좋아 진짜...'
 
-        }
-    ]
+        };
+    
 
     return(
         <div

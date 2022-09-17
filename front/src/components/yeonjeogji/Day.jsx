@@ -36,7 +36,10 @@ export default function Day({day, date, dayleft, daytop, dateleft, datetop}) {
 
             white-space:nowrap;
             
-            `}>{day}</div>
+            `}>{day}
+            </div>
+
+
             <div  
             style={{left:dateleft, top:datetop}}
             css={css`

@@ -41,7 +41,7 @@ export default function FestivalPictureViewPage() {
             <div
                 // 댓글 입력창을 남기기 위한 여백
                 css={css`
-                    height:80px;
+                    height:88px;
                 `} 
             />
             <CommentInputBox />

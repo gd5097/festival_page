@@ -145,9 +145,7 @@ export default function Reply( {replyInfo, parentName} ) {
                         />
                     </div>
                 ))}
-            </div>
-            
-            
+            </div> 
             
         </div>
     );
