@@ -13,6 +13,7 @@ import FestivalPictureWriteView from './pages/community-write-forms/festival-pic
 import GroupWriteView from './pages/community-write-forms/group-write-view';
 import LostArticleWriteView from './pages/community-write-forms/lost-article-write-view';
 import LostArticleViewPage from './pages/lost-article-view';
+import FoodInfoViewPage from './pages/food-info-view';
 
 function App() {
     return(        
@@ -26,6 +27,7 @@ function App() {
             <Route path="/community/festival-picture-view/:postId" element={<FestivalPictureViewPage />} />
             <Route path="/community/group-view/:postId" element={<GroupViewPage />} />
             <Route path="/community/lost-article-view/:postId" element={<LostArticleViewPage />} />
+            <Route path="/anniversary/food-info-view/:postId" element={<FoodInfoViewPage />} />
             <Route path="/community/festival-picture-view/festival-picture-write-view" element={<FestivalPictureWriteView />} />
             <Route path="/community/festival-picture-view/group-write-view" element={<GroupWriteView />} />
             <Route path="/community/festival-picture-view/lost-article-write-view" element={<LostArticleWriteView />} />

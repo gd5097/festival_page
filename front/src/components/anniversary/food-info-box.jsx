@@ -6,14 +6,15 @@ import tempImage from '../../images/festival-image3.jpg';
 import BaseTitleForm from '../base-title-form';
 import CategoryIndicator from '../category-indicator';
 import NumberBox from '../number-box';
+import { Link } from 'react-router-dom';
 
 export default function FoodInfoBox( {data} ){
     const theme = useTheme();
 
     return(
-        <button 
+        <Link 
             // 전체 컨테이너
-            type='button'
+            to={`/anniversary/food-info-view/${data.id}`}
             css={css`
                 display: grid;
                 grid-template-columns: auto 1fr auto;
@@ -104,7 +105,7 @@ export default function FoodInfoBox( {data} ){
                     {data.id}
                 </NumberBox>
             </div>
-        </button>
+        </Link>
     );
 }
 
