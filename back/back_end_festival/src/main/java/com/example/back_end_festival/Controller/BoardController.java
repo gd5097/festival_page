@@ -54,7 +54,7 @@ public class BoardController {
         BoardEntity saved = boardRepository.save(boardEntity);
         log.info(saved.toString()); // 로깅으로 데이터 확인해보기
         // 3. 해당 글로 redirect 한다.
-        return "redirect:/board/" + saved.getId(); // /board/{id} 로 이동을 하게 되면 해당 글에 대한 상세 페이지(single_page.html)로 이동!
+        return "redirect:/board/" + saved.getId(); // /board/{id} 로 이동을 하게 되면 해당 글에 대한 상세 페이지(single_page.html)로 이동한다.
     }
 
     // 글을 작성했을 때, 그 글의 내용을 보여주는 페이지 입니다.
