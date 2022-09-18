@@ -47,6 +47,7 @@ export default function FestivalPostBox( {children} ) {
                 css={css`
                     color: ${theme.colors.white};
                     font-size: 1rem;
+                    font-family: 'festivalfont-80';
 
                     margin-top: 20px;
                 `}

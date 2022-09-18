@@ -43,6 +43,7 @@ export default function FoodInfoViewPage() {
         <div
             css={css`
                 background-color: white;
+                height: 100vh;
             `}
         >
             <DefalutLayout>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { css, useTheme } from '@emotion/react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 export default function GroupWriteBox() {
     const { register, handleSubmit } = useForm();
@@ -10,7 +11,18 @@ export default function GroupWriteBox() {
         <form
             // 전체 컨테이너
             onSubmit={handleSubmit((tempData) => {
-                console.log(tempData);
+                axios.post('http://52.79.44.217/meeting/post/', 
+                    {
+                    "username": "프론트",
+                    "password": "123",
+                    "subject": "프론트에서 보내는 간절한 기도",
+                    "content": tempData.content,
+                  }
+                ).then((response) => {
+                    console.log(response);
+                });
+
+                console.log(tempData.content);
                 console.log('success');
             })}
             css={css`

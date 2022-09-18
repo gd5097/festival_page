@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { css } from '@emotion/react';
 
 import moment from 'moment';
 import 'moment/locale/ko';
 import GroupBox from './group-box';
 import PostButton from '../post-button';
+import axios from 'axios';
 
 export default function Group() {
     const time = moment().format('DD/MM HH:MM');
     
+    useEffect(() => {
+        console.log('Get in Func');
+        const test = axios.get('http://52.79.44.217/meeting/post/list').then(
+            (response) => {
+                console.log(response);
+                console.log(test);
+            }
+        );
+      }, []);
+
     const posts = [
         {
             id: 1,

@@ -16,8 +16,6 @@ export default function HorizontalInfoIndicator( {first, second} ) {
 
                 align-items: center;
                 justify-content: center;
-
-
             `}
         >
             <div
