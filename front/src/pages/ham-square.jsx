@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import TimeInformationBox from '../components/time-information-box';
 import ShowListButton from '../components/show-list-button';
 
-export default function MiraeSquarePage() {
+export default function HamSquarePage() {
     const navigate = useNavigate();
 
     return(
@@ -22,7 +22,7 @@ export default function MiraeSquarePage() {
                 `}
             />
             <Header 
-                title={'미래광장'}
+                title={'함인섭광장'}
                 leftIcon={
                     {
                         iconImage: arrowIcon,
@@ -44,7 +44,7 @@ export default function MiraeSquarePage() {
             >
 
             </div>
-            <ShowListButton link='/mirae-square/list'/>
+            <ShowListButton link='/ham-square/list'/>
             
         </DefalutLayout>
     );

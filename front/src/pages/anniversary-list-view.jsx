@@ -5,14 +5,13 @@ import DefalutLayout from '../layouts/default';
 import Header from '../components/header';
 
 import arrowIcon from '../images/back-arrow.png';
+import mapIcon from '../images/map.png';
 import FoodList from '../components/anniversary/food-list';
 import { useNavigate } from 'react-router-dom';
-import TimeInformationBox from '../components/time-information-box';
-import ShowListButton from '../components/show-list-button';
 
-export default function MiraeSquarePage() {
+export default function AnniversaryListViewPage() {
     const navigate = useNavigate();
-
+    
     return(
         <DefalutLayout>
             <div
@@ -22,7 +21,7 @@ export default function MiraeSquarePage() {
                 `}
             />
             <Header 
-                title={'미래광장'}
+                title={'육십주년관'}
                 leftIcon={
                     {
                         iconImage: arrowIcon,
@@ -31,20 +30,17 @@ export default function MiraeSquarePage() {
                         }
                     }
                 }
+                rightIcons={[
+                    {
+                        iconImage: mapIcon,
+                        onClick: () => {
+                            console.log('map Clicked');
+                        }
+                    },
+                ]}
             />
-            <TimeInformationBox />
-            <div
-                // 구분선
-                css={css`
-                    background-color: rgba(255, 255, 255, 0.3);
-                    width: 90vw;
-                    margin: 24px auto;
-                    height: 1px;
-                `}
-            >
 
-            </div>
-            <ShowListButton link='/mirae-square/list'/>
+            <FoodList />
             
         </DefalutLayout>
     );
