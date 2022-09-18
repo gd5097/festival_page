@@ -37,68 +37,33 @@ export default function StarPage() {
 
     return(
         <DefalutLayout>
-        <div   css={css`
-
-        position: absolute;
-        width: 179px;
-        height: 18px;
-        left: 20px;
-        top: 575px;
-
-        font-family: 'HGGGothicssi';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 18px;
-        /* identical to box height */
-
-
-        /* WHITE/100 */
-
-        color: #FFFFFF;
-        
-        white-space:nowrap;
-        `}>축제, 제대로 즐겨보실래요?
-        </div>
 
         <div css={css`
-        /* 공연의 전체 일정을 확인해보세요. */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
 
-        /* Sub */
+        `}>
+            <Day day={'Day 1'} date={'9/20 (화)'}/>
+        </div>
 
 
-        position: absolute;
-        width: 150px;
-        height: 13px;
-        left: 20px;
-        top: 601px;
 
-        font-family: 'HGGGothicssi';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 13px;
 
-        /* WHITE/60 */
 
-        color: rgba(255, 255, 255, 0.6);
-        white-space:nowrap;
-        `}>안들어보셨다면 미리듣기 필수!</div>
+        <div css={css`
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        `}>
         
-        
-
-        <Day day={'Day 1'} date={'9/20 (화)'} dayleft={117.5} daytop={147}/>
-
         <div    css={css`
 
         /* Rectangle 43 */
 
 
-        position: absolute;
         width: 260px;
         height: 300px;
-        left: 50px;
-        top: 189px;
 
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100.29%), url(image.png);
         border-radius: 21.3846px;
@@ -114,34 +79,97 @@ export default function StarPage() {
             </Slider>
         </div>
 
-        <Time content={'16:00 - 16:40'} contentleft={138} contenttop={505}/>
+        </div>
+
+
+
+
+        <div css={css`
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 16px;
+            margin-bottom: 52px;
+        `}>
+            <Time content={'16:00 - 16:40'}/>
+        </div>
+
+
+
+
+
+        <div css={css`
+            display: flex;
+            flex-direction: column;
+
+            padding: 20px;
+        `}>
+            <div   css={css`
+
+            width: 179px;
+            height: 18px;
+
+            font-family: 'HGGGothicssi';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 18px;
+            /* identical to box height */
+
+
+            /* WHITE/100 */
+
+            color: #FFFFFF;
+
+            white-space:nowrap;
+        `}>축제, 제대로 즐겨보실래요?
+        </div>
+
+        <div css={css`
+        /* 공연의 전체 일정을 확인해보세요. */
+
+        /* Sub */
+
+
+        width: 150px;
+        height: 13px;
+
+        font-family: 'HGGGothicssi';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 13px;
+
+        margin-top: 10px;
+        margin-bottom: 32px;
+
+        /* WHITE/60 */
+
+        color: rgba(255, 255, 255, 0.6);
+        white-space:nowrap;
+        `}>안들어보셨다면 미리듣기 필수!</div>
 
         <PictureTag src={image1} content1={'사장님 도박은 재미로 하셔야 합니다.'} content2={'2020.04.29 발매'} contentleft={20} contenttop={630} />
         <hr css={css`
 
-            position: absolute;
-        
+
             /* Vector 4 */
 
             width: 100%;
             height: 0px;
 
-            top: 690px;
+            margin: 16px 0px;
 
             /* WHITE/20 */
 
             border: 1px solid rgba(255, 255, 255, 0.2);
 
-            /* Inside auto layout */
+            /* Inside auto layout */    
 
-            flex: none;
-            order: 1;
-            align-self: stretch;
-            flex-grow: 0;   
-        
-        `}/>
-        <PictureTag src={image2} content1={'우리가 헤어져야 했던 이유'} content2={'2021.12.13 발매'} contentleft={20} contenttop={718} />
+            `}/>
+            <PictureTag src={image2} content1={'우리가 헤어져야 했던 이유'} content2={'2021.12.13 발매'} contentleft={20} contenttop={718} />
 
+        </div>
         </DefalutLayout>
     );
 }

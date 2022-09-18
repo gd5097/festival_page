@@ -18,6 +18,8 @@ import AnniversaryListViewPage from './pages/anniversary-list-view';
 import MiraeSquareListViewPage from './pages/mirae-square-list-view';
 import HamSquarePage from './pages/ham-square';
 import HamSquareListViewPage from './pages/ham-square-list-view';
+import LoginPage from './pages/login';
+import SignUpPage from './pages/sign-up';
 
 function App() {
     return(        
@@ -29,6 +31,8 @@ function App() {
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/yeonjeogji" element={<YeonjeogjiPage />} />
             <Route path="/ham-square" element={<HamSquarePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/sign-up" element={<SignUpPage />} />
             <Route path="/community/festival-picture-view/:postId" element={<FestivalPictureViewPage />} />
             <Route path="/community/group-view/:postId" element={<GroupViewPage />} />
             <Route path="/community/lost-article-view/:postId" element={<LostArticleViewPage />} />

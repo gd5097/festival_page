@@ -16,14 +16,14 @@ import { useNavigate } from 'react-router-dom';
 
 const Navigator = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 1rem;
 
-    background-color: tomato;
+    background-color: transparent;
     margin: 24px 20px;
 `
 
@@ -62,37 +62,35 @@ export default function CommunityPage() {
             <Navigator >
                 <NavigationButton
                     text={'축제사진'}
+                    color={currentCommunity === 'festival-picture' ? 'white' : 'rgba(255,255,255, 0.6)'}
                     onClick={() => {
                         setCurrentCommunity('festival-picture');
                     }}    
                 />
                 <NavigationButton
                     text={'번개모임'}
+                    color={currentCommunity === 'group' ? 'white' : 'rgba(255,255,255, 0.6)'}
                     onClick={() => {
                         setCurrentCommunity('group');
                     }}
                 />
                 <NavigationButton
                     text={'분실물'}
+                    color={currentCommunity === 'lost-article' ? 'white' : 'rgba(255,255,255, 0.6)'}
                     onClick={() => {
                         setCurrentCommunity('lost-article');
                     }}    
                 />
-                <NavigationButton
-                    text={'건의사항'}
-                    onClick={() => {
-                        setCurrentCommunity('suggestion');
-                    }}    
-                />
+                
             </Navigator>
+
             {currentCommunity === 'festival-picture' ? 
             <FestivalPicture /> : null }
             {currentCommunity === 'group' ? 
             <Group /> : null }
             {currentCommunity === 'lost-article' ? 
             <LostArticle /> : null }
-            {currentCommunity === 'suggestion' ? 
-            <Suggestion /> : null }
+            
         </DefalutLayout>
     );
 }

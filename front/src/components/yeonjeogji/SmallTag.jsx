@@ -1,99 +1,117 @@
 import React from 'react';
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function SmallTag({content, time, contentleft, contenttop}) {
+export default function SmallTag( {first, second} ) {
+    const theme = useTheme();
+    
     return(
         <div
-        style={{left:contentleft, top:contenttop}}
-        css={css`
-        /* Rectangle 43 */
-
-
-        position: absolute;
-        `}>
-            <div
+            //전체 컨테이너
             css={css`
-            /* 울음큰새 */
-            position: absolute; 
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                
+                column-gap: 14px;
 
-            width: 36px;
-            height: 18px;
+                margin-bottom: 16px;
 
-            font-family: 'HGGGothicssi';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 18px;
-            /* identical to box height */
+                align-items: center;
+                justify-content: center;
+
+            `}
+        >
+            <div
+                // 이름 영역
+                css={css`
+                    grid-column: 1;
+
+                    color: ${theme.colors.black};
+                    font-size: 1rem;
+
+                    width: auto;
+                    height: auto;
+
+                    font-family: 'HGGGothicssi';
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 18px;
+                    /* identical to box height */
 
 
-            /* WHITE/90 */
+                    /* WHITE/90 */
 
-            color: rgba(255, 255, 255, 0.9);
+                    color: rgba(255, 255, 255, 0.9);
 
-            opacity: 0.9;
+                    opacity: 0.9;
 
-            /* Inside auto layout */
+                    /* Inside auto layout */
 
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-
-            white-space:nowrap;
-            `}>{content}</div>
-            <hr 
+                    white-space:nowrap;
+                `}
+            >
+                {first}
+            </div>
+            <hr
+                // 점선
                 css={css`
 
-                position: absolute; 
+                
+                    grid-column: 2;
+                    width: stretch;
+                    border: 0px;
 
-                /* Vector 6 */
+                    /* Vector 6 */
+
+                    height: 0px;
+                    
+
+                    /* WHITE/20 */
+
+                    border: 1px dashed rgba(255, 255, 255, 0.2);
+
+                    /* Inside auto layout */
+
+                `}
+            />
+
+            
+            <div
+                // 정보 영역
+                css={css`
+                    grid-column: 3;
 
 
-                width: 152px;
-                height: 0px;
-                left: 70px;
+                    width: auto;
+                    height: auto;
 
-                /* WHITE/20 */
+                    font-family: 'HGGGothicssi';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 18px;
+                    /* identical to box height */
 
-                border: 1px dashed rgba(255, 255, 255, 0.2);
+                    text-align: center;
 
-                /* Inside auto layout */
+                    /* WHITE/90 */
 
-                flex: none;
-                order: 1;
-                flex-grow: 1;
-            `}></hr>
-            <div 
-            css={css`/* 16:50 - 17:30 */
-            position: absolute; 
+                    color: rgba(255, 255, 255, 0.9);
 
-            width: 84px;
-            height: 18px;
-            left: 236px;
+                    opacity: 0.8;
 
-            font-family: 'HGGGothicssi';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 18px;
-            /* identical to box height */
+                    /* Inside auto layout */
 
-            text-align: center;
-
-            /* WHITE/90 */
-
-            color: rgba(255, 255, 255, 0.9);
-
-            opacity: 0.8;
-
-            /* Inside auto layout */
-
-            flex: none;
-            order: 2;
-            flex-grow: 0;
-            white-space:nowrap;
-            `}>{time}</div>
+                    white-space:nowrap;
+                `}
+            >
+                {second}
+            </div>
         </div>
     );
+}
+
+SmallTag.propTypes = {
+    first: PropTypes.string.isRequired,
+    second: PropTypes.string.isRequired,
 }

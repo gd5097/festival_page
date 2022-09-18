@@ -2,14 +2,11 @@ import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function MiddleTag({contnet, left, top}) {
+export default function MiddleTag({contnet}) {
     return(
         <div 
-        style={{left:left, top:top}}
         css={css`
             /* 동아리 */
-            position: absolute;
-
 
             width: 49px;
             height: 20px;
@@ -21,6 +18,9 @@ export default function MiddleTag({contnet, left, top}) {
             line-height: 20px;
             /* identical to box height */
 
+            margin-top: 8px;
+            margin-bottom: 15px;
+
             text-align: center;
 
             /* WHITE/40 */
@@ -29,10 +29,6 @@ export default function MiddleTag({contnet, left, top}) {
 
 
             /* Inside auto layout */
-
-            flex: none;
-            order: 0;
-            flex-grow: 0;
 
             white-space:nowrap;
         `}>

@@ -2,20 +2,10 @@ import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function Time({content, time, contentleft, contenttop}) {
+export default function Time({content}) {
     return(
         <div
-        style={{left:contentleft, top:contenttop}}
-        css={css`
-        /* Rectangle 43 */
-
-
-        position: absolute;
-        `}>
-            <div
             css={css`
-
-            position: absolute;
 
             width: 84px;
             height: 18px;
@@ -35,6 +25,5 @@ export default function Time({content, time, contentleft, contenttop}) {
 
             white-space:nowrap;
             `}>{content}</div>
-        </div>
     );
 }

@@ -2,14 +2,11 @@ import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function Bar2({linetop}) {
+export default function Bar2() {
     return(
-        <div>
             <hr 
-                style={{top:linetop}}
                 css={css`
                 
-                position: absolute;
                 /* Vector 4 */
 
 
@@ -22,13 +19,11 @@ export default function Bar2({linetop}) {
                 opacity: 0.1;
                 border: 1px solid #FFFFFF;
 
+                margin-top: 14px;
+                margin-bottom: 30px;
+
                 /* Inside auto layout */
 
-                flex: none;
-                order: 1;
-                flex-grow: 0;
-
             `}></hr>
-        </div>
     );
 }

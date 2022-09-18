@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import TempButton from './tempButton';
 import DefaultModal from '../default-modal';
 import DefaultDialog from '../default-dialog';
+import { useNavigate } from 'react-router-dom';
 
 export default function HomeBox() {
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -12,10 +13,7 @@ export default function HomeBox() {
         setDialogOpen(true);
     };
 
-    const checkCoordinate = (e) => {
-        setCurPosition([e.target.offsetLeft, e.target.offsetTop]);
-        console.log(e);
-    };
+    const navigate = useNavigate();
 
     return(
         <div css={css`
@@ -83,14 +81,14 @@ export default function HomeBox() {
                             name: '회원가입',
                             color: '#12183f',
                             onClick: () => {
-                                console.log('Delete Clicked!');
+                                navigate('/sign-up');
                             }
                         },
                         {
                             name: '로그인',
                             color: '#12183f',
                             onClick: () => {
-                                console.log('Plus reply Clicked!');
+                                navigate('/login');
                             }
                         },
                     ]}

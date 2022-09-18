@@ -2,32 +2,34 @@ import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function SquareTag({content, content2, left, top}) {
+export default function SquareTag({content, content2}) {
     return(
         <div 
-        style={{left:left, top:top}}
         css={css`
         /* Rectangle 43 */
 
-
-        position: absolute;
-        width: 320px;
+        width: 100%;
         height: 100px;
-        left: 0px;
-        top: 0px;
-        bottom: 0px;
+
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+                
+        column-gap: 10px;
+
+        margin-bottom: 16px;
 
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), #B6B6B6;
         border-radius: 12px;
-        `}>
+        `}> 
+
             <div css={css`
                 /* 울음큰새 */
-                position: absolute;
-                top: 72px;
-                left: 16px;
 
-                width: 76px;
-                height: 18px;
+                width: auto;
+                height: auto;
+
+                margin-left: 16px;
+                margin-top: 72px;
 
                 font-family: 'HGGGothicssi';
                 font-style: normal;
@@ -42,9 +44,6 @@ export default function SquareTag({content, content2, left, top}) {
 
                 /* Inside auto layout */
 
-                flex: none;
-                order: 0;
-                flex-grow: 0;
 
                 white-space:nowrap;
             
@@ -52,12 +51,13 @@ export default function SquareTag({content, content2, left, top}) {
             
             <div css={css`
                 /* 울음큰새 */
-                position: absolute;
-                top: 73.5px;
-                right: 30px;
 
-                width: 76px;
-                height: 18px;
+                width: auto;
+                height: auto;
+
+                margin-top: 72px;
+                margin-right: 16px;
+                margin-left: auto;
 
                 font-family: 'HGGGothicssi';
                 font-style: normal;
@@ -71,10 +71,6 @@ export default function SquareTag({content, content2, left, top}) {
 
 
                 /* Inside auto layout */
-
-                flex: none;
-                order: 0;
-                flex-grow: 0;
 
                 white-space:nowrap;
             

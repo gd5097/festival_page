@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, useTheme } from '@emotion/react';
 
-export default function NavigationButton( {text, onClick} ) {
+export default function NavigationButton( {text, onClick , color} ) {
     const theme = useTheme();
 
     return(
@@ -10,7 +10,8 @@ export default function NavigationButton( {text, onClick} ) {
 
             onClick={onClick}
             css={css`
-                color: ${theme.colors.black};
+                color: ${color};
+                background-color: transparent;
                 padding: 0;
                 border: 0;
         `}>

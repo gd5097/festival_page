@@ -15,14 +15,16 @@ export default function ClubPage() {
 
     return(
         <DefalutLayout>
-        
-        <div   css={css`
+        <div css={css`
+            display: flex;
+            flex-direction: column;
+
+            padding: 20px;
+        `}>
+            <div   css={css`
         /* 대학 축제의 꽃, 공연 ! */
-        position: absolute;
         width: 174px;
         height: 22px;
-        left: 20px;
-        top: 160px;
 
         font-family: 'HGGGothicssi';
         font-style: normal;
@@ -43,12 +45,8 @@ export default function ClubPage() {
         <div css={css`
         /* 공연의 전체 일정을 확인해보세요. */
 
-
-        position: absolute;
         width: 190px;
         height: 15px;
-        left: 20px;
-        top: 192px;
 
         font-family: 'HGGGothicssi';
         font-style: normal;
@@ -62,21 +60,18 @@ export default function ClubPage() {
         margin-bottom: 32px;
         `}>카드를 눌러서 자세한 정보를 살펴보세요!</div>
 
-        <Day day={'Day 1'} date={'9/20 (화)'} dayleft={20} daytop={231}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={273}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={389}/>
-        <Bar2 linetop={519}></Bar2>
-
-        <Day day={'Day 2'} date={'9/21 (수)'} dayleft={20} daytop={549}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={591}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={707}/>
-        <Bar2 linetop={837}></Bar2>
-        
-
-        <Day day={'Day 3'} date={'9/22 (목)'} dayleft={20} daytop={867}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={909}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={1025}/>
-        <Bar2 linetop={939}></Bar2>
+        <Day day={'Day 1'} date={'9/20 (화)'}/>
+        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
+        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
+        <Bar2/>
+        <Day day={'Day 2'} date={'9/21 (수)'}/>
+        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
+        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
+        <Bar2/>
+        <Day day={'Day 3'} date={'9/22 (목)'}/>
+        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
+        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
+        </div>
 
         </DefalutLayout>
     );

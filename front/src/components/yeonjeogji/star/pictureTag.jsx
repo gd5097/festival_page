@@ -2,32 +2,36 @@ import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function PictureTag({src, content1, content2, contentleft, contenttop}) {
+export default function PictureTag({src, content1, content2}) {
 
     return(
         <div 
-            style={{left:contentleft, top:contenttop}}
             css={css` 
-            position: absolute;
-            `}>
+            display: flex;
+        `}>
 
             <img
             src={src}
             css={css`
-                position: absolute;
                 width: 56px;
                 height: 56px;
                 border-radius: 4px;
             `}/>
 
+            <div css={css`
+            display: flex;
+            flex-direction: column;
+
+            padding: 8px;
+            `}>
+
             <div
                 css={css`
-                position: absolute;
-                width: 206px;
-                height: 15px;
+                width: auto;
+                height: auto;
 
-                left: 84px;
-                top: 8px;
+                margin-bottom: 6px;
+
 
                 font-family: 'HGGGothicssi';
                 font-style: normal;
@@ -41,10 +45,6 @@ export default function PictureTag({src, content1, content2, contentleft, conten
 
 
                 /* Inside auto layout */
-
-                flex: none;
-                order: 0;
-                flex-grow: 0;
                 white-space:nowrap;
             `}>
                 {content1}
@@ -52,13 +52,10 @@ export default function PictureTag({src, content1, content2, contentleft, conten
 
             <div
             css={css`
-                position: absolute;
                 /* 2020.04.29 발매 */
-                width: 78px;
-                height: 13px;
+                width: auto;
+                height: auto;
 
-                left: 84px;
-                top: 29px;
 
                 font-family: 'HGGGothicssi';
                 font-style: normal;
@@ -69,16 +66,14 @@ export default function PictureTag({src, content1, content2, contentleft, conten
 
                 /* Inside auto layout */
 
-                flex: none;
-                order: 1;
-                flex-grow: 0;
                 white-space:nowrap;
 
                 color: rgba(255, 255, 255, 0.8);
             `}>
                 {content2}
             </div>
-        
-        </div>
+            </div>
+
+        </div>       
     );
 }
