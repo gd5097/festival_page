@@ -2,11 +2,17 @@ import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function Day({day, date, dayleft, daytop, dateleft, datetop}) {
+export default function Day({day, date, dayleft, daytop}) {
     return(
-        <div>
+        <div
+        style={{left:dayleft, top:daytop}}
+        css={css`
+        /* Rectangle 43 */
+
+
+        position: absolute;
+        `}>
             <div 
-            style={{left:dayleft, top:daytop}}
             css={css`
 
             /* Day 1 */
@@ -38,10 +44,49 @@ export default function Day({day, date, dayleft, daytop, dateleft, datetop}) {
             
             `}>{day}
             </div>
+            
+
+
+
+
+            <div css={css`/* · */
+                position: absolute;
+
+                width: 8px;
+                height: 18px;
+
+                left: 73px;
+
+                font-family: 'HGGGothicssi';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 18px;
+                /* identical to box height */
+
+
+                /* WHITE/100 */
+
+                color: #FFFFFF;
+
+                opacity: 0.6;
+
+                /* Inside auto layout */
+
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                white-space:nowrap;
+                `}>
+                .
+            </div>
+
+
+
+
 
 
             <div  
-            style={{left:dateleft, top:datetop}}
             css={css`
 
             /* 9/20 (화) */
@@ -50,6 +95,9 @@ export default function Day({day, date, dayleft, daytop, dateleft, datetop}) {
 
             width: 58px;
             height: 18px;
+
+            left:87px;
+            top: 5px;
 
             font-family: 'HGGGothicssi';
             font-style: normal;

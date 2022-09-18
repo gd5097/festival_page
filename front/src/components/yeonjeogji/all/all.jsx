@@ -66,35 +66,35 @@ export default function AllPage() {
         margin-bottom: 32px;
         `}>공연의 전체 일정을 확인해보세요.</div>
 
-        <Day day={'Day 1'} date={'9/20 (화)'} dayleft={20} daytop={239} dateleft={87} datetop={243}/>
+        <Day day={'Day 1'} date={'9/20 (화)'} dayleft={20} daytop={239}/>
         <MiddleTag contnet={'동아리'} left={20} top={289}/>
-        <SmallTag content={'RMPC'} time={'16:00 - 16:40'} contentleft={20} contenttop={324} lineleft={70} linetop={324} timeleft={256} timetop={324}/>
-        <SmallTag content={'울음큰새'} time={'16:55 - 17:35'} contentleft={20} contenttop={358} lineleft={70} linetop={358} timeleft={256} timetop={358}/>
-        <SmallTag content={'꾼'} time={'17:50 - 18:30'} contentleft={20} contenttop={392} lineleft={70} linetop={392} timeleft={256} timetop={392}/>
+        <SmallTag content={'RMPC'} time={'16:00 - 16:40'} contentleft={20} contenttop={324}/>
+        <SmallTag content={'울음큰새'} time={'16:55 - 17:35'} contentleft={20} contenttop={358}/>
+        <SmallTag content={'꾼'} time={'17:50 - 18:30'} contentleft={20} contenttop={392}/>
         <MiddleTag contnet={'연예인'} left={20} top={442}/>
-        <SmallTag content={'코드쿤스트'} time={'19:00 - 19:50'} contentleft={20} contenttop={477} lineleft={70} linetop={477} timeleft={256} timetop={477}/>
-        <SmallTag content={'PSY'} time={'20:00 - 21:30'} contentleft={20} contenttop={511} lineleft={70} linetop={511} timeleft={256} timetop={511}/>
+        <SmallTag content={'코드쿤스트'} time={'19:00 - 19:50'} contentleft={20} contenttop={477}/>
+        <SmallTag content={'PSY'} time={'20:00 - 21:30'} contentleft={20} contenttop={511}/>
         <Bar linetop={569}></Bar>
 
-        <Day day={'Day 2'} date={'9/21 (수)'} dayleft={20} daytop={609} dateleft={87} datetop={613}/>
+        <Day day={'Day 2'} date={'9/21 (수)'} dayleft={20} daytop={609}/>
         <MiddleTag contnet={'동아리'} left={20} top={659}/>
-        <SmallTag content={'RMPC'} time={'16:00 - 16:40'} contentleft={20} contenttop={694} lineleft={70} linetop={694} timeleft={256} timetop={694}/>
-        <SmallTag content={'울음큰새'} time={'16:55 - 17:35'} contentleft={20} contenttop={728} lineleft={70} linetop={728} timeleft={256} timetop={728}/>
-        <SmallTag content={'꾼'} time={'17:50 - 18:30'} contentleft={20} contenttop={762} lineleft={70} linetop={762} timeleft={256} timetop={762}/>
+        <SmallTag content={'RMPC'} time={'16:00 - 16:40'} contentleft={20} contenttop={694}/>
+        <SmallTag content={'울음큰새'} time={'16:55 - 17:35'} contentleft={20} contenttop={728}/>
+        <SmallTag content={'꾼'} time={'17:50 - 18:30'} contentleft={20} contenttop={762}/>
         <MiddleTag contnet={'연예인'} left={20} top={812}/>
-        <SmallTag content={'코드쿤스트'} time={'19:00 - 19:50'} contentleft={20} contenttop={847} lineleft={70} linetop={847} timeleft={256} timetop={847}/>
-        <SmallTag content={'PSY'} time={'20:00 - 21:30'} contentleft={20} contenttop={881} lineleft={70} linetop={881} timeleft={256} timetop={881}/>
+        <SmallTag content={'코드쿤스트'} time={'19:00 - 19:50'} contentleft={20} contenttop={847}/>
+        <SmallTag content={'PSY'} time={'20:00 - 21:30'} contentleft={20} contenttop={881}/>
         <Bar linetop={939}></Bar>
         
 
-        <Day day={'Day 3'} date={'9/22 (목)'} dayleft={20} daytop={979} dateleft={87} datetop={983}/>
+        <Day day={'Day 3'} date={'9/22 (목)'} dayleft={20} daytop={979}/>
         <MiddleTag contnet={'동아리'} left={20} top={1024}/>
-        <SmallTag content={'RMPC'} time={'16:00 - 16:40'} contentleft={20} contenttop={1064} lineleft={70} linetop={1064} timeleft={256} timetop={1064}/>
-        <SmallTag content={'울음큰새'} time={'16:55 - 17:35'} contentleft={20} contenttop={1098} lineleft={70} linetop={1098} timeleft={256} timetop={1098}/>
-        <SmallTag content={'꾼'} time={'17:50 - 18:30'} contentleft={20} contenttop={1132} lineleft={70} linetop={1132} timeleft={256} timetop={1132}/>
+        <SmallTag content={'RMPC'} time={'16:00 - 16:40'} contentleft={20} contenttop={1064}/>
+        <SmallTag content={'울음큰새'} time={'16:55 - 17:35'} contentleft={20} contenttop={1098}/>
+        <SmallTag content={'꾼'} time={'17:50 - 18:30'} contentleft={20} contenttop={1132}/>
         <MiddleTag contnet={'연예인'} left={20} top={1182}/>
-        <SmallTag content={'코드쿤스트'} time={'19:00 - 19:50'} contentleft={20} contenttop={1217} lineleft={70} linetop={1217} timeleft={256} timetop={1217}/>
-        <SmallTag content={'PSY'} time={'20:00 - 21:30'} contentleft={20} contenttop={1251} lineleft={70} linetop={1251} timeleft={256} timetop={1251}/>
+        <SmallTag content={'코드쿤스트'} time={'19:00 - 19:50'} contentleft={20} contenttop={1217}/>
+        <SmallTag content={'PSY'} time={'20:00 - 21:30'} contentleft={20} contenttop={1251}/>
         <Bar linetop={939}></Bar>
 
         </DefalutLayout>

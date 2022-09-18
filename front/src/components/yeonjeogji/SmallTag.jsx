@@ -2,11 +2,17 @@ import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function SmallTag({content, time, contentleft, contenttop, lineleft, linetop, timeleft, timetop}) {
+export default function SmallTag({content, time, contentleft, contenttop}) {
     return(
-        <div>
+        <div
+        style={{left:contentleft, top:contenttop}}
+        css={css`
+        /* Rectangle 43 */
+
+
+        position: absolute;
+        `}>
             <div
-            style={{left:contentleft, top:contenttop}}
             css={css`
             /* 울음큰새 */
             position: absolute; 
@@ -37,7 +43,6 @@ export default function SmallTag({content, time, contentleft, contenttop, linele
             white-space:nowrap;
             `}>{content}</div>
             <hr 
-                style={{left:lineleft, top:linetop}}
                 css={css`
 
                 position: absolute; 
@@ -47,6 +52,7 @@ export default function SmallTag({content, time, contentleft, contenttop, linele
 
                 width: 152px;
                 height: 0px;
+                left: 70px;
 
                 /* WHITE/20 */
 
@@ -59,12 +65,12 @@ export default function SmallTag({content, time, contentleft, contenttop, linele
                 flex-grow: 1;
             `}></hr>
             <div 
-            style={{left:timeleft, top:timetop}}
             css={css`/* 16:50 - 17:30 */
             position: absolute; 
 
             width: 84px;
             height: 18px;
+            left: 236px;
 
             font-family: 'HGGGothicssi';
             font-style: normal;

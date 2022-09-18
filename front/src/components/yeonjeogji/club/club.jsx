@@ -62,18 +62,18 @@ export default function ClubPage() {
         margin-bottom: 32px;
         `}>카드를 눌러서 자세한 정보를 살펴보세요!</div>
 
-        <Day day={'Day 1'} date={'9/20 (화)'} dayleft={20} daytop={231} dateleft={87} datetop={235}/>
+        <Day day={'Day 1'} date={'9/20 (화)'} dayleft={20} daytop={231}/>
         <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={273}/>
         <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={389}/>
         <Bar2 linetop={519}></Bar2>
 
-        <Day day={'Day 2'} date={'9/21 (수)'} dayleft={20} daytop={549} dateleft={87} datetop={553}/>
+        <Day day={'Day 2'} date={'9/21 (수)'} dayleft={20} daytop={549}/>
         <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={591}/>
         <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={707}/>
         <Bar2 linetop={837}></Bar2>
         
 
-        <Day day={'Day 3'} date={'9/22 (목)'} dayleft={20} daytop={867} dateleft={87} datetop={871}/>
+        <Day day={'Day 3'} date={'9/22 (목)'} dayleft={20} daytop={867}/>
         <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={909}/>
         <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"} left={20} top={1025}/>
         <Bar2 linetop={939}></Bar2>
