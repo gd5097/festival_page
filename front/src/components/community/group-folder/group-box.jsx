@@ -4,13 +4,17 @@ import PropTypes from 'prop-types';
 import CommentIndicator from '../../comment-indicator';
 import { Link } from 'react-router-dom';
 
-export default function GroupBox( {postInfo, onClick} ){
-    const theme = useTheme();
+import moment from 'moment';
+import 'moment/locale/ko';
 
+export default function GroupBox( {postInfo, onClick} ){
+    const time = moment(postInfo.createdAt).format('DD/MM HH:MM');
+    const theme = useTheme();
+    console.log(time);
     return(
-        <Link
+        <button
             // 전체 컨테이너
-            to={`/community/group-view/${postInfo.id}`}
+            onClick={onClick}
             css={css`
                 display: flex;
                 flex-direction: column;
@@ -39,7 +43,7 @@ export default function GroupBox( {postInfo, onClick} ){
                     background-color: white;
                 `}
             >
-                {postInfo.content}
+                {postInfo.contents}
             </div>
             <div
                 // 날짜 및 댓글 수 컨테이너
@@ -54,7 +58,7 @@ export default function GroupBox( {postInfo, onClick} ){
                         color: ${theme.colors.gray};
                     `}
                 >
-                    {postInfo.postingTime}
+                    {time}
                 </div>
                 <div
                     // 댓글 수 표기
@@ -62,11 +66,11 @@ export default function GroupBox( {postInfo, onClick} ){
                         margin-left: auto;
                     `}
                 >
-                    <CommentIndicator number={postInfo.comments}/>
+                    <CommentIndicator number={postInfo.commentCount}/>
                 </div>
             </div>
             
-        </Link>
+        </button>
     );
 }
 

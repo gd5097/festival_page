@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@emotion/react';
 
 import DefalutLayout from '../layouts/default';
-import Header from '../components/header';
+import Header from '../components/header-home';
 import Weather from '../components/weather';
 import HomeBox from '../components/home/home-box';
 
@@ -36,6 +36,13 @@ export default function HomePage() {
                     },
                 ]}
             />
+            <div
+                css={css`
+                    height: 30px;
+                `}
+            >
+
+            </div>
             <Weather />
             <HomeBox />
         </DefalutLayout>

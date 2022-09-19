@@ -26,7 +26,7 @@ export default function Header({ title, leftIcon, rightIcons}){
 
                 z-index: 99;
                 
-                background-color: ${theme.colors.primary1};
+                background-color: transparent;
                 
         `}>
             {leftIcon !== null ?

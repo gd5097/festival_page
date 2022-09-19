@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { css } from '@emotion/react';
 
 import DefalutLayout from '../layouts/default';
@@ -52,6 +52,11 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
     const auth = useAuth();
+
+    // useEffect(() => {
+    //     console.log(auth.auth);
+    //     {auth.auth === {} ? console.log('yes') : console.log('no')}
+    // },[])
 
     return(
         <div
@@ -128,9 +133,12 @@ export default function LoginPage() {
                                 JSON.stringify(tempData),{
                                         headers: { "Content-Type": `application/json`}
                                     }
-                                    ).then((response) => {
-                                        console.log(response);
-                                        setAuth(response.data);
+                                    ).then((response) => {                 
+                                        auth.setAuth('Bearer ' + response.data.token);
+                                        console.log('Bearer '+ response.data.token)
+                                        //navigate(-1);  
+                                    }).catch((error) => {
+                                        console.log('이상함');
                                     })
                         })}
                     >

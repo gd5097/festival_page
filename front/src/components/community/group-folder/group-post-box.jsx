@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { css, useTheme } from '@emotion/react';
 import WritterBox from '../writter-box';
 
 import moment from 'moment/moment';
 import 'moment/locale/ko';
 import ReplyBox from '../reply-folder/reply-box';
+import axios from 'axios';
+import useAuth from '../../../hooks/use-auth';
+import { useParams } from 'react-router-dom';
 
-export default function GroupPostBox() {
-    const time = moment().format('DD/MM HH:MM');
+
+
+export default function GroupPostBox( {postInfo, fun, replies} ) {
+    const time = moment(postInfo.createdAt).format('MM/DD HH:MM');
     const theme = useTheme();
+    const params = useParams();
+    const [curPost, setCurPost] = useState(undefined);
 
     return(
         <div
@@ -22,7 +29,7 @@ export default function GroupPostBox() {
             `}
         >
             <WritterBox 
-                writter={'날아라토끼'}
+                writter={postInfo.author.nickname}
                 time={time}
             />
             <div
@@ -35,9 +42,8 @@ export default function GroupPostBox() {
                     margin-bottom: 48px;
                 `}
             >
-                닭똥집 드시고 싶으신분? 너무 많이 시킴. 와서 드시고 가세용
+                {postInfo.contents}
             </div>
-            <ReplyBox />
         </div>
     );
 }

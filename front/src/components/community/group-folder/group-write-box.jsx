@@ -2,29 +2,37 @@ import React from 'react';
 import { css, useTheme } from '@emotion/react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import useAuth from '../../../hooks/use-auth';
+import { useNavigate } from 'react-router-dom';
 
 export default function GroupWriteBox() {
     const { register, handleSubmit } = useForm();
     const theme = useTheme();
+    const auth = useAuth();
+    const navigate = useNavigate();
 
     return(
         <form
             // 전체 컨테이너
-            onSubmit={handleSubmit((tempData) => {
-                axios.post('http://52.79.44.217/meeting/post/', 
-                    {
-                    "username": "프론트",
-                    "password": "123",
-                    "subject": "프론트에서 보내는 간절한 기도",
-                    "content": tempData.content,
-                  }
-                ).then((response) => {
-                    console.log(response);
-                });
+            onSubmit={handleSubmit((data) => {
+                data.title = "dump";
+                data.categoryId = "1";
+                console.log(data);
 
-                console.log(tempData.content);
-                console.log('success');
-            })}
+                axios.post('http://52.79.44.217/posts',data
+                    ,{
+                        headers: {
+                            "Content-Type": `application/json`,
+                            Authorization : auth.auth,
+                        }
+                    }).then((response) => {                 
+                        console.log(response);
+                        navigate(-1);
+                    }).catch((error) => {
+                        console.log('이상함');
+                    })
+            })
+        }
             css={css`
                 display: flex;
                 flex-direction: column;
@@ -40,7 +48,7 @@ export default function GroupWriteBox() {
 
             <textarea
                 // 내용 입력부
-                {...register("content",{
+                {...register("contents",{
                     required: "글 내용이 필요합니다.",
                     minLength: {
                         value: 1,

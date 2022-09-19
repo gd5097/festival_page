@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { css } from '@emotion/react';
 
 import DefalutLayout from '../../layouts/default';
@@ -8,9 +8,15 @@ import arrowIcon from '../../images/back-arrow.png';
 import FestivalPictureWriteBox from '../../components/community/festival-picture-folder/festival-picture-write-box';
 import WriteInputBox from '../../components/community/write-input-button';
 import { useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/use-auth';
 
 export default function FestivalPictureWriteView() {
     const navigate = useNavigate();
+
+    const auth = useAuth();
+    useEffect(() => {
+        console.log(auth.auth.token);
+    },[]);
 
     return(
         <DefalutLayout>

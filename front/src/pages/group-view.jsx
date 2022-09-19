@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { css } from '@emotion/react';
 
 import DefalutLayout from '../layouts/default';
@@ -6,25 +6,30 @@ import Header from '../components/header';
 
 import bigMenuIcon from '../images/big-menu.png';
 import arrowIcon from '../images/back-arrow.png';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import GroupPostBox from '../components/community/group-folder/group-post-box';
 import CommentInputBox from '../components/community/comment-input-box';
 import DefaultModal from '../components/default-modal';
-
+import axios from 'axios';
+import useAuth from '../hooks/use-auth';
+import ReplyBox from '../components/community/reply-folder/reply-box';
 
 export default function GroupViewPage() {
 
     const params = useParams();
-    useEffect(() => {
-        console.log(params);
-        //console.log(match.params);
-     }, [])
-     
+    const auth = useAuth();
+    const [posts, setPosts] = useState();
+
     const navigate = useNavigate();
 
     const [modalOpen, setModalOpen] = useState(false);
     const [curPosition, setCurPosition] = useState([]);
 
+    const location = useLocation();
+    const post = useMemo(() => location.state);
+    const [replies, setReplies] = useState([]);
+    const [parent, setParent] = useState(undefined);
+    
     const showModal = () => {
         setModalOpen(true);
     };
@@ -32,6 +37,21 @@ export default function GroupViewPage() {
     const checkCoordinate = (e) => {
         setCurPosition([e.target.offsetLeft, e.target.offsetTop]);
     };
+
+    const getReplies = useCallback(async () => {
+        const response = await axios.get(`http://52.79.44.217/posts/${location.state.id}/comments`, {
+            headers: {
+                "Content-Type": `application/json`,
+                Authorization: auth.auth,
+            }
+        });
+    
+        setReplies(response.data.comments);
+    }, [axios])
+
+    useEffect(() => {
+        getReplies();
+    }, []);
 
     return(
         <DefalutLayout>
@@ -46,7 +66,7 @@ export default function GroupViewPage() {
                 leftIcon={
                     {
                         iconImage: arrowIcon,
-                        onClick: () =>                       {
+                        onClick: () => {
                             navigate(-1);
                         }
                     }
@@ -61,14 +81,21 @@ export default function GroupViewPage() {
                     },
                 ]}
             />
-            <GroupPostBox />
+            <GroupPostBox postInfo={post} fun={getReplies} replies={replies}/>
+
+            <ReplyBox parentName={post.author.nickname} id={post.id} onSelectAsParent={(parent) => {
+                setParent(parent);
+            }} replies={replies}/>
             <div
                 // 댓글 입력창을 남기기 위한 여백
                 css={css`
                     height:80px;
                 `} 
             />
-            <CommentInputBox />
+        
+            
+            <CommentInputBox postId={location.state.id} onSubmit={() => { getReplies() }} parent={parent} />
+            
             {modalOpen && 
                 <DefaultModal
                     setModalOpen={setModalOpen}

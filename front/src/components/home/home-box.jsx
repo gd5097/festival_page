@@ -5,6 +5,13 @@ import DefaultModal from '../default-modal';
 import DefaultDialog from '../default-dialog';
 import { useNavigate } from 'react-router-dom';
 
+import homeBackGroundImage from '../../images/bg_off.png';
+import miraeSquareImage from '../../images/future_square.png';
+import anniversaryImage from '../../images/60st.png';
+import communityImage from '../../images/board.png';
+import yeonjeogjiImage from '../../images/playground.png';
+import hamSquareImage from '../../images/hamsquare.png';
+
 export default function HomeBox() {
     const [dialogOpen, setDialogOpen] = useState(false);
     const [curPosition, setCurPosition] = useState([]);
@@ -18,33 +25,62 @@ export default function HomeBox() {
     return(
         <div css={css`
             margin: 0px auto;
-            //background: white;    // for test
+            height: auto;
+
+            overflow: hidden;
         `}>
+            <img
+                src={homeBackGroundImage}
+                css={css`
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    z-index: -1;
+                    
+                    object-fit: cover;
+                    width: 100%;
+                `}
+            />
             <TempButton
-                size={80}
-                text={'미래광장'}
+                size={48}
+                positionx={6}
+                positiony={11}
+                image={miraeSquareImage}
                 link={'/mirae-square'} 
             />
             <TempButton
-                size={80}
-                text={'60주년관'}
+                size={50}
+                positionx={17}
+                positiony={48}
+                image={anniversaryImage}
                 link={'/anniversary'} 
             />
+            
+            
             <TempButton
-                size={80}
-                text={'게시판'}
+                size={25}
+                positionx={70}
+                positiony={-75}
+                image={communityImage}
                 link={'/community'} 
             />
+            
             <TempButton
-                size={80}
-                text={'연적지'}
+                size={50}
+                positionx={50}
+                positiony={-64}
+                image={yeonjeogjiImage}
                 link={'/yeonjeogji'} 
             />
             <TempButton
-                size={80}
-                text={'함인섭'}
+                size={50}
+                positionx={47}
+                positiony={-13}
+                image={hamSquareImage}
                 link={'/ham-square'} 
             />
+            
+
             <button 
                 type='button'
                 onClick={(e) => {
@@ -94,6 +130,7 @@ export default function HomeBox() {
                     ]}
                 />
             }
+            
         </div>
     );
 }

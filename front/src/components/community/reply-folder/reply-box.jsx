@@ -1,34 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { css, useTheme } from '@emotion/react';
 
 import moment from 'moment/moment';
 import 'moment/locale/ko';
 
 import Reply from './reply';
+import axios from 'axios';
+import useAuth from '../../../hooks/use-auth';
 
-export default function ReplyBox( {parentName} ) {
+export default function ReplyBox({ parentName, replies, onSelectAsParent }) {
     const time = moment().format('DD/MM HH:MM');
-
-    const replies = [
-        {
-            id: 1,
-            wrriter: '우엉우엉김밥',
-            content: '공연 언제까지 하는지 알아?',
-            postTime: time,
-        },
-        {
-            id: 2,
-            wrriter: '뭘봐멀봐멀바마마',
-            content: '와우...',
-            postTime: time,
-        },
-        {
-            id: 3,
-            wrriter: '닐라닐라 바닐라',
-            content: '바닐라 아이스크림 맛있더라',
-            postTime: time,
-        },
-    ]
+    const auth = useAuth();
 
     return(
         <div
@@ -36,6 +18,8 @@ export default function ReplyBox( {parentName} ) {
             css={css`
                 display: flex;
                 flex-direction: column;
+
+                margin: 0px 20px;
 
                 row-gap: 12px;
             `}
@@ -49,11 +33,13 @@ export default function ReplyBox( {parentName} ) {
             >
                 댓글
             </div>
-            {replies.map((reply)=>(
+            {replies?.map((reply)=>(
                 <Reply
-                    key={`reply-${replies.id}`}
+                    key={`reply-${reply.id}`}
                     replyInfo={reply}
+                    plus={reply.parentId !== null ? true : false}
                     parentName={parentName}    
+                    onSelectAsParent={onSelectAsParent}
                 />
                     
             ))}
