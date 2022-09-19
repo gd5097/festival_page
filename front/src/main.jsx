@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import ReactDom, { BrowserRouter } from 'react-router-dom';
 
 import App from './app';
+import { AuthProvider } from './context/auth-context';
 
 const app = document.getElementById('app');
 
@@ -20,11 +21,13 @@ const theme = {
 
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <ThemeProvider theme={theme}>
-                <App />
-            </ThemeProvider>
-        </BrowserRouter>
+        <AuthProvider>
+            <BrowserRouter>
+                <ThemeProvider theme={theme}>
+                    <App />
+                </ThemeProvider>
+            </BrowserRouter>
+        </AuthProvider>
     </React.StrictMode>
 );
 

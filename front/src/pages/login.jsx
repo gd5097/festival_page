@@ -9,6 +9,9 @@ import homeIcon from '../images/black-home.png';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
+import axios from 'axios';
+import { setUncaughtExceptionCaptureCallback } from 'process';
+import useAuth from '../hooks/use-auth';
 
 const Label = styled.div`
     color: #12183F;
@@ -48,6 +51,7 @@ const Input = styled.input`
 export default function LoginPage() {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
+    const auth = useAuth();
 
     return(
         <div
@@ -118,7 +122,16 @@ export default function LoginPage() {
                     <form
                         // 폼
                         onSubmit={handleSubmit((tempData) => {
-                            console.log(tempData);
+                            console.log(JSON.stringify(tempData));
+
+                            axios.post('http://52.79.44.217/authentications',
+                                JSON.stringify(tempData),{
+                                        headers: { "Content-Type": `application/json`}
+                                    }
+                                    ).then((response) => {
+                                        console.log(response);
+                                        setAuth(response.data);
+                                    })
                         })}
                     >
                         <Label css={css`margin-top: 32px;`}>
@@ -126,7 +139,7 @@ export default function LoginPage() {
                         </Label>
                         <Input css={css`margin-top: 16px;`}
                             //아이디 입력부
-                            {...register("id", {
+                            {...register("username", {
                                 required: "아이디를 입력해주세요.",
                                 minLength: {
                                     value: 2,

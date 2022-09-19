@@ -7,12 +7,10 @@ import Day from '../Day';
 
 import { useNavigate } from 'react-router-dom';
 
-import image1 from '../../../images/festival-image1.jpg';
-import image2 from '../../../images/festival-image2.jpg';
-import image3 from '../../../images/festival-image3.jpg';
-import image4 from '../../../images/festival-image4.jpg';
-import image5 from '../../../images/festival-image5.jpg';
-import image6 from '../../../images/festival-image6.jpg';
+import image1 from '../../../images/영앤리치.png';
+import image2 from '../../../images/오반.jpg';
+import image3 from '../../../images/자이언티.jpg';
+import image4 from '../../../images/펀치.jpg';
 
 import Time from './time';
 import PictureTag from './pictureTag';
@@ -28,11 +26,11 @@ export default function StarPage() {
     const navigate = useNavigate();
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
       };
 
     return(
@@ -74,8 +72,6 @@ export default function StarPage() {
                 <Picture src={image2}/>
                 <Picture src={image3}/>
                 <Picture src={image4}/>
-                <Picture src={image5}/>
-                <Picture src={image6}/>
             </Slider>
         </div>
 

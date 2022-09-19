@@ -2,7 +2,9 @@ import React from 'react';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-export default function SquareTag({content, content2}) {
+
+export default function SquareTag({src, content, content2}) {
+
     return(
         <div 
         css={css`

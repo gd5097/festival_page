@@ -68,31 +68,27 @@ export default function AllPage() {
         `}>공연의 전체 일정을 확인해보세요.</div>
 
             <Day day={'Day 1'} date={'9/20 (화)'}/>
-            <MiddleTag contnet={'동아리'}/>
-            <SmallTag first={'RMPC'} second={'16:00 - 16:40'}/>
-            <SmallTag first={'울음큰새'} second={'16:55 - 17:35'}/>
-            <SmallTag first={'꾼'} second={'17:50 - 18:30'}/>
-            <MiddleTag contnet={'연예인'}/>
-            <SmallTag first={'코드쿤스트'} second={'19:00 - 19:50'}/>
-            <SmallTag first={'PSY'} second={'20:00 - 21:30'}/>
+            <MiddleTag contnet={'밴드동아리'}/>
+            <SmallTag first={'꾼'} second={'22:00~22:20'}/>
+            <SmallTag first={'더울림'} second={'X'}/>
+            <SmallTag first={'TONE'} second={'X'}/>
+            <SmallTag first={'RMPC'} second={'X'}/>
 
             <Day day={'Day 2'} date={'9/21 (수)'}/>
-            <MiddleTag contnet={'동아리'}/>
-            <SmallTag first={'RMPC'} second={'16:00 - 16:40'}/>
-            <SmallTag first={'울음큰새'} second={'16:55 - 17:35'}/>
-            <SmallTag first={'꾼'} second={'17:50 - 18:30'}/>
+            <MiddleTag contnet={'댄스동아리'}/>
+            <SmallTag first={'브로커'} second={'X'}/>
+            <SmallTag first={'이너스'} second={'X'}/>
+            <SmallTag first={'아젤리아'} second={'X'}/>
+            <SmallTag first={'Co’k'} second={'X'}/>
+            <SmallTag first={'놀이패한마당'} second={'X'}/>
             <MiddleTag contnet={'연예인'}/>
-            <SmallTag first={'코드쿤스트'} second={'19:00 - 19:50'}/>
-            <SmallTag first={'PSY'} second={'20:00 - 21:30'}/>
+            <SmallTag first={'영앤리치'} second={'X'}/>
+            <SmallTag first={'오반'} second={'X'}/>
 
             <Day day={'Day 3'} date={'9/22 (목)'}/>
-            <MiddleTag contnet={'동아리'}/>
-            <SmallTag first={'RMPC'} second={'16:00 - 16:40'}/>
-            <SmallTag first={'울음큰새'} second={'16:55 - 17:35'}/>
-            <SmallTag first={'꾼'} second={'17:50 - 18:30'}/>
             <MiddleTag contnet={'연예인'}/>
-            <SmallTag first={'코드쿤스트'} second={'19:00 - 19:50'}/>
-            <SmallTag first={'PSY'} second={'20:00 - 21:30'}/>
+            <SmallTag first={'자이언티'} second={'X'}/>
+            <SmallTag first={'펀치'} second={'X'}/>
 
         </div>
 

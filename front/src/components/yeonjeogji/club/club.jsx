@@ -10,6 +10,13 @@ import Bar2 from '../Bar2';
 import { useNavigate } from 'react-router-dom';
 import SquareTag from '../SquareTag';
 
+import image1 from '../../../images/TONE.jpg';
+import image2 from '../../../images/브로커.jpg';
+import image3 from '../../../images/이너스.jpg';
+import image4 from '../../../images/아젤리아.jpg';
+import image5 from '../../../images/Cok.jpg';
+
+
 export default function ClubPage() {
     const navigate = useNavigate();
 
@@ -61,16 +68,17 @@ export default function ClubPage() {
         `}>카드를 눌러서 자세한 정보를 살펴보세요!</div>
 
         <Day day={'Day 1'} date={'9/20 (화)'}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
+        <SquareTag content={"꾼"} content2={"22:00~22:20"}/>
+        <SquareTag content={"더울림"} content2={"X"}/>
+        <SquareTag src={image1} content={"TONE"} content2={"X"}/>
+        <SquareTag content={"RMPC"} content2={"X"}/>
         <Bar2/>
         <Day day={'Day 2'} date={'9/21 (수)'}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
-        <Bar2/>
-        <Day day={'Day 3'} date={'9/22 (목)'}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
-        <SquareTag content={"동아리 이름"} content2={"16:00 - 16:40"}/>
+        <SquareTag src={image2} content={"브로커"} content2={"X"}/>
+        <SquareTag src={image3} content={"이너스"} content2={"X"}/>
+        <SquareTag src={image4} content={"아젤리아"} content2={"X"}/>
+        <SquareTag src={image5} content={"Co’k"} content2={"X"}/>
+        <SquareTag content={"놀이패한마당"} content2={"X"}/>
         </div>
 
         </DefalutLayout>
