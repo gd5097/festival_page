@@ -51,7 +51,7 @@ export default function FoodInfoBox( {data} ){
                 `}
             >
                 <img
-                    src={tempImage}
+                    src={data.image}
                     css={css`
                         width: 100%;
                         height: 100%;

@@ -33,10 +33,10 @@ export default function ClubPage() {
         width: 174px;
         height: 22px;
 
-        font-family: 'HGGGothicssi';
+        font-family: "festivalfont-60";
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 22px;
         /* identical to box height */
 
@@ -55,10 +55,9 @@ export default function ClubPage() {
         width: 190px;
         height: 15px;
 
-        font-family: 'HGGGothicssi';
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 15px;
 
         color: rgba(255, 255, 255, 0.6);

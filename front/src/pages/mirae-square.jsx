@@ -5,7 +5,7 @@ import DefalutLayout from '../layouts/default';
 import Header from '../components/header';
 
 import arrowIcon from '../images/back-arrow.png';
-import FoodList from '../components/anniversary/food-list';
+
 import { useNavigate } from 'react-router-dom';
 import TimeInformationBox from '../components/time-information-box';
 import ShowListButton from '../components/show-list-button';

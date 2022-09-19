@@ -5,7 +5,7 @@ import PropTypes from '@emotion/react';
 
 import clockIcon from '../images/clock.png';
 
-export default function TimeInformationBox() {
+export default function TimeInformationBox( {text, time} ) {
     const theme = useTheme();
 
     return(
@@ -32,7 +32,7 @@ export default function TimeInformationBox() {
                     color: rgba(255, 255, 255, 0.7);
                 `}
             >
-                주점/플리마켓
+                {text}
             </div>
             <div
                 // 시계 및 운영시간 컨테이너
@@ -44,7 +44,12 @@ export default function TimeInformationBox() {
                     column-gap: 8px;
                 `}
             >
-                <div>
+                <div
+                    css={css`
+                        position: relative;
+                        top: 1px;
+                    `}
+                >
                     <img src={clockIcon} />
                 </div>
                 <div
@@ -54,7 +59,7 @@ export default function TimeInformationBox() {
                         color: #E0E2EC;
                     `}
                 >
-                    운영시간 20:00-04:00
+                    {time}
                 </div>
 
             </div>

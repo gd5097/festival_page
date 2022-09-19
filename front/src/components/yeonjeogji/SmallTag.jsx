@@ -32,7 +32,7 @@ export default function SmallTag( {first, second} ) {
                     width: auto;
                     height: auto;
 
-                    font-family: 'HGGGothicssi';
+
                     font-style: normal;
                     font-weight: 400;
                     line-height: 18px;
@@ -85,7 +85,7 @@ export default function SmallTag( {first, second} ) {
                     width: auto;
                     height: auto;
 
-                    font-family: 'HGGGothicssi';
+
                     font-style: normal;
                     font-weight: 400;
                     font-size: 1rem;

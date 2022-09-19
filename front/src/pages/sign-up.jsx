@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { css } from '@emotion/react';
 
 import DefalutLayout from '../layouts/default';
@@ -9,6 +9,9 @@ import homeIcon from '../images/black-home.png';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
+import DefaultDialog from '../components/default-dialog';
+import InfoDialog from '../components/info-dialog';
+import axios from 'axios';
 
 const Label = styled.div`
     color: #12183F;
@@ -48,6 +51,8 @@ const Input = styled.input`
 export default function SignUpPage() {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
+    const [dialogOpen, setDialogOpen] = useState(false);
+    const [infoMessage, setInfoMessage] = useState('');
 
     return(
         <div
@@ -117,8 +122,37 @@ export default function SignUpPage() {
 
                     <form
                         // 폼
-                        onSubmit={handleSubmit((tempData) => {
-                            console.log(tempData);
+                        onSubmit={handleSubmit((data) => {
+                            console.log(data);
+                            if(data.password !== data.passwordCheck){
+                                console.log('비밀번호다름');
+                                setInfoMessage('비밀번호가 다릅니다.');
+                                setDialogOpen(true);
+                                return;
+                            }
+                            
+                            axios.get(`http://52.79.44.217/users?username=${data.username}&nickname=${data.nickname}`
+                                ).then((response) => {                 
+                                    if(!response.data.username){
+                                        setInfoMessage('중복된 아이디 입니다.');
+                                        setDialogOpen(true);
+                                        return;
+                                    }
+                                    if(!response.data.nickname){
+                                        setInfoMessage('중복된 닉네임 입니다.');
+                                        setDialogOpen(true);
+                                        return;
+                                    }
+                                    
+                                    axios.post(`http://52.79.44.217/users`, data).then((response2) => {
+                                        navigate('/');
+                                    });
+                                }).catch((error) => {
+                                    console.log('이상함');
+                                })
+                              
+
+                            console.log('으아악');
                         })}
                     >
                         <Label css={css`margin-top: 48px;`}>
@@ -145,7 +179,7 @@ export default function SignUpPage() {
                         </Label>
                         <Input css={css`margin-top: 16px;`}
                             //아이디 입력부
-                            {...register("id", {
+                            {...register("username", {
                                 required: "아이디를 입력해주세요.",
                                 minLength: {
                                     value: 2,
@@ -234,6 +268,39 @@ export default function SignUpPage() {
 
                 </div>
                 
+                {dialogOpen &&
+                <div
+                    // blur용 div
+                    css={css`
+                        position: fixed;
+
+                        top: 0px;
+                        left: 0px;
+
+                        width: 100vw;
+                        height: 100vh;
+
+                        backdrop-filter: blur(10px);
+                    `}
+                >
+
+                </div>
+            }
+                {dialogOpen && 
+                <InfoDialog
+                    setDialogOpen={setDialogOpen}
+                    infoText={infoMessage}
+                    functions={[
+                        {
+                            name: '닫기',
+                            color: '#12183f',
+                            onClick: () => {
+                                setDialogOpen(false);
+                            }
+                        },
+                    ]}
+                />
+            }
             </DefalutLayout>
         </div>
     );

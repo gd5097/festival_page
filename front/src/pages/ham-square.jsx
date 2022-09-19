@@ -5,10 +5,11 @@ import DefalutLayout from '../layouts/default';
 import Header from '../components/header';
 
 import arrowIcon from '../images/back-arrow.png';
-import FoodList from '../components/anniversary/food-list';
+
 import { useNavigate } from 'react-router-dom';
 import TimeInformationBox from '../components/time-information-box';
 import ShowListButton from '../components/show-list-button';
+import mapImage from '../images/image_map_hamsquare.png';
 
 export default function HamSquarePage() {
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function HamSquarePage() {
                     }
                 }
             />
-            <TimeInformationBox />
+            <TimeInformationBox text={'푸드트럭/플리마켓'} time={'운영시간 10:00-18:00'}/>
             <div
                 // 구분선
                 css={css`
@@ -44,8 +45,30 @@ export default function HamSquarePage() {
             >
 
             </div>
-            <ShowListButton link='/ham-square/list'/>
-            
+            <div
+                css={css`
+                    //margin-bottom: 60px;
+                `}
+            >
+                <img
+                    src={mapImage}
+                    css={css`
+                        object-fit: cover;
+                        width: 100%;
+                    `}
+                />
+            </div>
+
+            <div
+                css={css`
+                    
+                    margin-top: 64px;
+                    margin-bottom: 32px;
+                    margin-left: auto;
+                `}
+            >
+                <ShowListButton link='/ham-square/list'/>
+            </div>
         </DefalutLayout>
     );
 }

@@ -11,10 +11,10 @@ export default function MiddleTag({contnet}) {
             width: 49px;
             height: 20px;
 
-            font-family: 'HGGGothicssi';
+
             font-style: normal;
             font-weight: 400;
-            font-size: 18px;
+            font-size: 1.125rem;
             line-height: 20px;
             /* identical to box height */
 

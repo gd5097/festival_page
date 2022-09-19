@@ -70,16 +70,16 @@ export default function DefaultDialog( { setDialogOpen, functions, infoText } ) 
             <button
                 // 첫 번째 버튼
                 type='button'
-                onClick={functions[0].onClick}
+                onClick={functions[0]?.onClick}
                 css={css`
-                    border: 2px solid ${functions[0].color};
+                    border: 2px solid ${functions[0]?.color};
                     border-radius: 8px;
                     background: 0;
 
                     padding: 12px 24px;
                     font-size: 0.9rem;
 
-                    color: ${functions[0].color};
+                    color: ${functions[0]?.color};
                 `}
             >
                 {functions[0].name}
@@ -87,7 +87,7 @@ export default function DefaultDialog( { setDialogOpen, functions, infoText } ) 
             <button
                 // 첫 번째 버튼
                 type='button'
-                onClick={functions[1].onClick}
+                onClick={functions[1]?.onClick}
                 css={css`
                     border: 0;
                     border-radius: 8px;
@@ -96,11 +96,11 @@ export default function DefaultDialog( { setDialogOpen, functions, infoText } ) 
                     padding: 12px 24px;
                     font-size: 0.9rem;
 
-                    background-color: ${functions[1].color};
+                    background-color: ${functions[1]?.color};
                     color: white;
                 `}
             >
-                {functions[1].name}
+                {functions[1]?.name}
             </button>
         
             </div>

@@ -33,10 +33,9 @@ export default function PictureTag({src, content1, content2}) {
                 margin-bottom: 6px;
 
 
-                font-family: 'HGGGothicssi';
                 font-style: normal;
                 font-weight: 400;
-                font-size: 14px;
+                font-size: 0.875rem;
                 line-height: 15px;
 
                 /* WHITE/80 */
@@ -56,11 +55,10 @@ export default function PictureTag({src, content1, content2}) {
                 width: auto;
                 height: auto;
 
-
-                font-family: 'HGGGothicssi';
+                font-family: "festivalfont-60";
                 font-style: normal;
                 font-weight: 400;
-                font-size: 12px;
+                font-size: 0.75rem;
                 line-height: 13px;
 
 

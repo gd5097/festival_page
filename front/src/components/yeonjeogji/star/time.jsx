@@ -10,10 +10,10 @@ export default function Time({content}) {
             width: 84px;
             height: 18px;
 
-            font-family: 'HGGGothicssi';
+            font-family: "festivalfont-60";
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 1rem;
             line-height: 18px;
             /* identical to box height */
 

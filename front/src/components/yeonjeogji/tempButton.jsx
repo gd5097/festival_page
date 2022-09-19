@@ -60,10 +60,10 @@ export default function TempButton({width, height, text, link}) {
     width: 26px;
     height: 15px;
 
-    font-family: 'HGGGothicssi';
+
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 15px;
     text-align: center;
 

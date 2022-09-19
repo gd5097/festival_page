@@ -6,12 +6,18 @@ import Header from '../components/header';
 
 import arrowIcon from '../images/back-arrow.png';
 import mapIcon from '../images/map.png';
-import FoodList from '../components/anniversary/food-list';
+import FoodList from '../components/anniversary/food-list-60st';
 import { useNavigate } from 'react-router-dom';
+import DefaultModalMap from '../components/default-modal-map';
+import modalImage from '../images/modal_map_hamsquare.png';
 
 export default function HamSquareListViewPage() {
     const navigate = useNavigate();
-    
+    const [dialogOpen, setDialogOpen] = useState(false);
+    const showDialog = () => {
+        setDialogOpen(true);
+    };
+
     return(
         <DefalutLayout>
             <div

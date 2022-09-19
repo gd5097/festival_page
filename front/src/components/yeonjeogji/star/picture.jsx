@@ -8,6 +8,8 @@ export default function Picture({src}) {
         <div css={css` 
         width: stretch;
         aspect-ratio: 1 / 1;
+        width: 260px;
+        height: 300px;
         
         overflow: hidden;`}>
         <img

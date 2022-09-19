@@ -29,12 +29,13 @@ const Button = styled(Link)`
     
 `
 
-export default function TempButton({size, image, link, positionx, positiony}) {
+export default function TempButton({size, image, link, positionx, positiony, onClick}) {
     return(
         <Button
             size={size}
             positionx={positionx}
             positiony={positiony}
+            onClick={onClick}
             to={link}
         >
             <img

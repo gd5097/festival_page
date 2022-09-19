@@ -5,10 +5,12 @@ import DefalutLayout from '../layouts/default';
 import Header from '../components/header';
 
 import arrowIcon from '../images/back-arrow.png';
-import FoodList from '../components/anniversary/food-list';
+import FoodList from '../components/anniversary/food-list-60st';
 import { useNavigate } from 'react-router-dom';
 import TimeInformationBox from '../components/time-information-box';
 import ShowListButton from '../components/show-list-button';
+
+import mapImage from '../images/image_map_60st.png';
 
 export default function AnniversaryPage() {
     const navigate = useNavigate();
@@ -33,7 +35,7 @@ export default function AnniversaryPage() {
                     }
                 }
             />
-            <TimeInformationBox />
+            <TimeInformationBox text={'주점/푸드트럭'} time={'운영시간 20:00-04:00'}/>
             <div
                 // 구분선
                 css={css`
@@ -42,11 +44,31 @@ export default function AnniversaryPage() {
                     margin: 24px auto;
                     height: 1px;
                 `}
+            />
+            <div
+                css={css`
+                    //margin-bottom: 60px;
+                `}
             >
-
+                <img
+                    src={mapImage}
+                    css={css`
+                        object-fit: cover;
+                        width: 100%;
+                    `}
+                />
             </div>
-            <ShowListButton link='/anniversary/list'/>
             
+            <div
+                css={css`
+                    
+                    margin-top: 64px;
+                    margin-bottom: 32px;
+                    margin-left: auto;
+                `}
+            >
+                <ShowListButton link='/anniversary/list'/>
+            </div>
         </DefalutLayout>
     );
 }

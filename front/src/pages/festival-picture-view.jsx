@@ -6,7 +6,6 @@ import Header from '../components/header';
 
 import arrowIcon from '../images/back-arrow.png';
 import menuIcon from '../images/big-menu.png';
-import FoodList from '../components/anniversary/food-list';
 import { useNavigate, useParams } from 'react-router-dom';
 import FestivalPostBox from '../components/community/festival-picture-folder/festival-post-box';
 import CommentInputBox from '../components/community/comment-input-box';

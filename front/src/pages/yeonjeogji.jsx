@@ -26,6 +26,8 @@ const Navigator = styled.div`
 
     margin: 24px 20px;
 
+    column-gap: 10px;
+
     display: flex;
     justify-content: center;
 `
@@ -43,7 +45,7 @@ export default function CommunityPage() {
                 `}
             />
             <Header 
-                title={'연적지'}
+                title={'대운동장'}
                 leftIcon={
                     {
                         iconImage: homeIcon,
@@ -65,18 +67,21 @@ export default function CommunityPage() {
             <Navigator >
                 <NavigationButton
                     text={'전체'}
+                    abled={currentCommunity === 'all' ? true : false}
                     onClick={() => {
                         setCurrentCommunity('all');
                     }}    
                 />
                 <NavigationButton
                     text={'동아리'}
+                    abled={currentCommunity === 'group' ? true : false}
                     onClick={() => {
                         setCurrentCommunity('group');
                     }}
                 />
                 <NavigationButton
                     text={'연예인'}
+                    abled={currentCommunity === 'star' ? true : false}
                     onClick={() => {
                         setCurrentCommunity('star');
                     }}    

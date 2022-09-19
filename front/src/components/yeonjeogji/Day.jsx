@@ -20,11 +20,10 @@ export default function Day({day, date, daytop}) {
             /* Day 1 */
 
 
-
-            font-family: 'HGGGothicssi';
+            font-family: "festivalfont-60";
             font-style: normal;
             font-weight: 400;
-            font-size: 24px;
+            font-size: 1.5rem;
             line-height: 26px;
 
             /* KEY/ORANGE */
@@ -53,10 +52,10 @@ export default function Day({day, date, daytop}) {
 
                 margin: 0px 4px;
 
-                font-family: 'HGGGothicssi';
+
                 font-style: normal;
                 font-weight: 400;
-                font-size: 16px;
+                font-size: 1rem;
                 line-height: 18px;
                 /* identical to box height */
 
@@ -91,10 +90,9 @@ export default function Day({day, date, daytop}) {
 
             margin: 4px 0px;
 
-            font-family: 'HGGGothicssi';
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 1rem;
             line-height: 18px;
             /* identical to box height */
 

@@ -11,6 +11,8 @@ import anniversaryImage from '../../images/60st.png';
 import communityImage from '../../images/board.png';
 import yeonjeogjiImage from '../../images/playground.png';
 import hamSquareImage from '../../images/hamsquare.png';
+import useAuth from '../../hooks/use-auth';
+import ComTempButton from './comTempButton';
 
 export default function HomeBox() {
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -19,6 +21,8 @@ export default function HomeBox() {
     const showDialog = () => {
         setDialogOpen(true);
     };
+
+    const auth = useAuth();
 
     const navigate = useNavigate();
 
@@ -57,10 +61,18 @@ export default function HomeBox() {
             />
             
             
-            <TempButton
+            <ComTempButton
                 size={25}
                 positionx={70}
                 positiony={-75}
+                onClick={() => {
+                    if(auth.auth === ""){
+                        showDialog();
+                    }
+                    else{
+                        navigate('/community');
+                    }
+                }}
                 image={communityImage}
                 link={'/community'} 
             />
@@ -79,16 +91,6 @@ export default function HomeBox() {
                 image={hamSquareImage}
                 link={'/ham-square'} 
             />
-            
-
-            <button 
-                type='button'
-                onClick={(e) => {
-                    showDialog();
-                }}
-            >
-                test
-            </button>
 
             {dialogOpen &&
                 <div
