@@ -24,7 +24,7 @@ export default function Header({ title, leftIcon, rightIcons}){
                 width: stretch;
                 height: 48px;
 
-                z-index: 99;
+                //z-index: 99;
                 
                 background-color: ${theme.colors.primary1};
                 

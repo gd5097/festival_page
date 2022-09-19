@@ -112,8 +112,17 @@ export default function GroupViewPage() {
                         {
                             name: '삭제',
                             color: '#FF773E',
-                            onClick: () => {
-                                console.log('Plus reply Clicked!');
+                            onClick: () => { 
+                                axios.delete(`http://52.79.44.217/posts/${post.id}`,
+                                    {
+                                        headers: { 
+                                            Authorization : auth.auth,
+                                        }
+                                    }   
+                                ).then((response) => {
+                                    console.log(response);
+                                    navigate(-1);
+                                });
                             }
                         },
                     ]}
