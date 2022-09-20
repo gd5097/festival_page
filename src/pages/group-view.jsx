@@ -10,9 +10,9 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import GroupPostBox from '../components/community/group-folder/group-post-box';
 import CommentInputBox from '../components/community/comment-input-box';
 import DefaultModal from '../components/default-modal';
-import axios from 'axios';
 import useAuth from '../hooks/use-auth';
 import ReplyBox from '../components/community/reply-folder/reply-box';
+import { useAxios } from '../context/axios';
 
 export default function GroupViewPage() {
 
@@ -29,6 +29,8 @@ export default function GroupViewPage() {
     const post = useMemo(() => location.state);
     const [replies, setReplies] = useState([]);
     const [parent, setParent] = useState(undefined);
+
+    const axios = useAxios();
     
     const showModal = () => {
         setModalOpen(true);
@@ -39,7 +41,7 @@ export default function GroupViewPage() {
     };
 
     const getReplies = useCallback(async () => {
-        const response = await axios.get(`http://52.79.44.217/posts/${location.state.id}/comments`, {
+        const response = await axios.get(`/posts/${location.state.id}/comments`, {
             headers: {
                 "Content-Type": `application/json`,
                 Authorization: auth.auth,
@@ -113,7 +115,7 @@ export default function GroupViewPage() {
                             name: '삭제',
                             color: '#FF773E',
                             onClick: () => { 
-                                axios.delete(`http://52.79.44.217/posts/${post.id}`,
+                                axios.delete(`/posts/${post.id}`,
                                     {
                                         headers: { 
                                             Authorization : auth.auth,

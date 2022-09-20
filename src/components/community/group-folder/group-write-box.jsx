@@ -4,12 +4,14 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import useAuth from '../../../hooks/use-auth';
 import { useNavigate } from 'react-router-dom';
+import { useAxios } from '../../../context/axios';
 
 export default function GroupWriteBox() {
     const { register, handleSubmit } = useForm();
     const theme = useTheme();
     const auth = useAuth();
     const navigate = useNavigate();
+    const axios = useAxios();
 
     return(
         <form
@@ -19,7 +21,7 @@ export default function GroupWriteBox() {
                 data.categoryId = "1";
                 console.log(data);
 
-                axios.post('http://52.79.44.217/posts',data
+                axios.post('/posts',data
                     ,{
                         headers: {
                             "Content-Type": `application/json`,

@@ -1,0 +1,9 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": [
+      ".github/workflows/*",
+      "file:///home/rain/festival_page/.github/worflows/deploy.yml",
+      "file:///home/rain/festival_page/.github/worflows/build-deploy.yml"
+    ]
+  }
+}

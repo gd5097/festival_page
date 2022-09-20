@@ -12,6 +12,7 @@ import styled from '@emotion/styled';
 import DefaultDialog from '../components/default-dialog';
 import InfoDialog from '../components/info-dialog';
 import axios from 'axios';
+import { useAxios } from '../context/axios';
 
 const Label = styled.div`
     color: #12183F;
@@ -53,6 +54,8 @@ export default function SignUpPage() {
     const { register, handleSubmit } = useForm();
     const [dialogOpen, setDialogOpen] = useState(false);
     const [infoMessage, setInfoMessage] = useState('');
+
+    const axios = useAxios();
 
     return(
         <div
@@ -131,7 +134,7 @@ export default function SignUpPage() {
                                 return;
                             }
                             
-                            axios.get(`http://52.79.44.217/users?username=${data.username}&nickname=${data.nickname}`
+                            axios.get(`/users?username=${data.username}&nickname=${data.nickname}`
                                 ).then((response) => {                 
                                     if(!response.data.username){
                                         setInfoMessage('중복된 아이디 입니다.');
@@ -144,7 +147,7 @@ export default function SignUpPage() {
                                         return;
                                     }
                                     
-                                    axios.post(`http://52.79.44.217/users`, data).then((response2) => {
+                                    axios.post(`/users`, data).then((response2) => {
                                         navigate('/');
                                     });
                                 }).catch((error) => {
