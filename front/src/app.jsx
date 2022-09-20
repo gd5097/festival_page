@@ -36,6 +36,13 @@ import FoodInfoViewPage11 from './pages/info-pages/60st/food-info-view11';
 import FoodInfoViewPage12 from './pages/info-pages/60st/food-info-view12';
 import FoodInfoViewPage13 from './pages/info-pages/60st/food-info-view13';
 import FoodInfoViewPage14 from './pages/info-pages/60st/food-info-view14';
+import FoodInfoViewPageHam1 from './pages/info-pages/ham-square/food-info-view1';
+import FoodInfoViewPageHam2 from './pages/info-pages/ham-square/food-info-view2';
+import FoodInfoViewPageHam3 from './pages/info-pages/ham-square/food-info-view3';
+import FoodInfoViewPageHam4 from './pages/info-pages/ham-square/food-info-view4';
+import FoodInfoViewPageHam5 from './pages/info-pages/ham-square/food-info-view5';
+import FoodInfoViewPageHam6 from './pages/info-pages/ham-square/food-info-view6';
+
 
 function App() {
     return(        
@@ -79,6 +86,13 @@ function App() {
             {/*미래광장*/}
 
             {/*함인섭광장*/}
+            <Route path="/ham-square/food-info-view/1" element={<FoodInfoViewPageHam1 />} />
+            <Route path="/ham-square/food-info-view/2" element={<FoodInfoViewPageHam2 />} />
+            <Route path="/ham-square/food-info-view/3" element={<FoodInfoViewPageHam3 />} />
+            <Route path="/ham-square/food-info-view/4" element={<FoodInfoViewPageHam4 />} />
+            <Route path="/ham-square/food-info-view/5" element={<FoodInfoViewPageHam5 />} />
+            <Route path="/ham-square/food-info-view/6" element={<FoodInfoViewPageHam6 />} />
+
         </Routes>
     );
 }

@@ -27,7 +27,7 @@ const Pimg = styled.img`
     
 `
 
-export default function FoodInfoViewPage1() {
+export default function FoodInfoViewPageHam1() {
 
     const theme = useTheme();
     const params = useParams();
