@@ -29,7 +29,7 @@ export default function HomeBox() {
     return(
         <div css={css`
             margin: 0px auto;
-            height: auto;
+            height: 120vh;
 
             overflow: hidden;
         `}>
@@ -45,26 +45,26 @@ export default function HomeBox() {
                     width: 100%;
                 `}
             />
-            <TempButton
+            {/* <TempButton
                 size={48}
                 positionx={6}
                 positiony={11}
                 image={miraeSquareImage}
                 link={'/mirae-square'} 
-            />
+            /> */}
             <TempButton
                 size={50}
                 positionx={17}
-                positiony={48}
+                positiony={92}
                 image={anniversaryImage}
                 link={'/anniversary'} 
             />
             
             
             <ComTempButton
-                size={25}
-                positionx={70}
-                positiony={-75}
+                size={30}
+                positionx={57}
+                positiony={-35}
                 onClick={() => {
                     if(auth.auth === ""){
                         showDialog();
@@ -80,14 +80,14 @@ export default function HomeBox() {
             <TempButton
                 size={50}
                 positionx={50}
-                positiony={-64}
+                positiony={-27}
                 image={yeonjeogjiImage}
                 link={'/yeonjeogji'} 
             />
             <TempButton
                 size={50}
                 positionx={47}
-                positiony={-13}
+                positiony={30}
                 image={hamSquareImage}
                 link={'/ham-square'} 
             />

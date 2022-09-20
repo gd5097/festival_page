@@ -17,16 +17,12 @@ import image12 from '../../images/60st12-1.jpg';
 import image13 from '../../images/60st13-1.jpg';
 import image14 from '../../images/60st14-1.jpg';
 
-import DefaultModalMap from '../default-modal-map';
-import modalImage from '../../images/modal_map_60st.png';
+
 
 
 export default function FoodList60st(){
     const theme = useTheme();
-    const [dialogOpen, setDialogOpen] = useState(false);
-    const showDialog = () => {
-        setDialogOpen(true);
-    };
+    
 
     const list = [
         {
@@ -141,31 +137,6 @@ export default function FoodList60st(){
                 margin: 0px 20px;
             `}
         >
-            {dialogOpen &&
-                <div
-                    // blur용 div
-                    css={css`
-                        position: fixed;
-
-                        top: 0px;
-                        left: 0px;
-
-                        width: 100vw;
-                        height: 100vh;
-
-                        backdrop-filter: blur(20px);
-                    `}
-                >
-
-                </div>
-            }
-            {dialogOpen && 
-                <DefaultModalMap
-                    setDialogOpen={setDialogOpen}
-                    infoText={'게시판 이용시 로그인이 필요합니다.'}
-                    image={modalImage}
-                />
-            }
             {list.map((item) => (
                 <FoodInfoBox 
                     key={`food-info-${item.id}`}

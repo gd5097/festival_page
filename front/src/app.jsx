@@ -51,6 +51,14 @@ import FoodInfoViewPageHam12 from './pages/info-pages/ham-square/food-info-view1
 import FoodInfoViewPageHam13 from './pages/info-pages/ham-square/food-info-view13';
 import FoodInfoViewPageHam14 from './pages/info-pages/ham-square/food-info-view14';
 import FoodInfoViewPageHam15 from './pages/info-pages/ham-square/food-info-view15';
+import FoodInfoViewPageHam16 from './pages/info-pages/ham-square/food-info-view16';
+import FoodInfoViewPageHam17 from './pages/info-pages/ham-square/food-info-view17';
+import FoodInfoViewPageHam18 from './pages/info-pages/ham-square/food-info-view18';
+import FoodInfoViewPageHam19 from './pages/info-pages/ham-square/food-info-view19';
+import FoodInfoViewPageHam20 from './pages/info-pages/ham-square/food-info-view20';
+import FoodInfoViewPageHam21 from './pages/info-pages/ham-square/food-info-view21';
+import FoodInfoViewPageHam22 from './pages/info-pages/ham-square/food-info-view22';
+import FoodInfoViewPageHam23 from './pages/info-pages/ham-square/food-info-view23';
 
 
 function App() {
@@ -110,6 +118,14 @@ function App() {
             <Route path="/ham-square/food-info-view/13" element={<FoodInfoViewPageHam13 />} />
             <Route path="/ham-square/food-info-view/14" element={<FoodInfoViewPageHam14 />} />
             <Route path="/ham-square/food-info-view/15" element={<FoodInfoViewPageHam15 />} />
+            <Route path="/ham-square/food-info-view/16" element={<FoodInfoViewPageHam16 />} />
+            <Route path="/ham-square/food-info-view/17" element={<FoodInfoViewPageHam17 />} />
+            <Route path="/ham-square/food-info-view/18" element={<FoodInfoViewPageHam18 />} />
+            <Route path="/ham-square/food-info-view/19" element={<FoodInfoViewPageHam19 />} />
+            <Route path="/ham-square/food-info-view/20" element={<FoodInfoViewPageHam20 />} />
+            <Route path="/ham-square/food-info-view/21" element={<FoodInfoViewPageHam21 />} />
+            <Route path="/ham-square/food-info-view/22" element={<FoodInfoViewPageHam22 />} />
+            <Route path="/ham-square/food-info-view/23" element={<FoodInfoViewPageHam23 />} />
         
         
         </Routes>

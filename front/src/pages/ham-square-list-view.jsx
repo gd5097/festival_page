@@ -40,7 +40,7 @@ export default function HamSquareListViewPage() {
                     {
                         iconImage: mapIcon,
                         onClick: () => {
-                            console.log('map Clicked');
+                            showDialog();
                         }
                     },
                 ]}
@@ -48,6 +48,30 @@ export default function HamSquareListViewPage() {
 
             <FoodList />
             
+            {dialogOpen &&
+                <div
+                    // blur용 div
+                    css={css`
+                        position: fixed;
+
+                        top: 0px;
+                        left: 0px;
+
+                        width: 100vw;
+                        height: 100vh;
+
+                        backdrop-filter: blur(10px);
+                    `}
+                >
+
+                </div>
+            }
+            {dialogOpen && 
+                <DefaultModalMap
+                    setDialogOpen={setDialogOpen}
+                    image={modalImage}
+                />
+            }
         </DefalutLayout>
     );
 }
