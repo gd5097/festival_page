@@ -242,6 +242,7 @@ export default function FoodListHam(){
             {list.map((item) => (
                 <FoodInfoBox 
                     key={`food-info-${item.id}`}
+                    page={'ham-square'}
                     data={item}
                 />
             ))}
