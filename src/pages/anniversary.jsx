@@ -62,7 +62,7 @@ export default function AnniversaryPage() {
             <div
                 css={css`
                     
-                    margin-top: 64px;
+                    margin-top: 32px;
                     margin-bottom: 32px;
                     margin-left: auto;
                 `}
