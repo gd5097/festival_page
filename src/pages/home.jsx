@@ -21,20 +21,20 @@ export default function HomePage() {
             />
             <Header
                 title={'대동제'}
-                rightIcons={[
-                    {
-                        iconImage: tempImageDoc,
-                        onClick: () => {
-                            console.log("Doc Icon Clicked");
-                        }
-                    },
-                    {
-                        iconImage: tempImageBell,
-                        onClick: () => {
-                            console.log("Bell Icon Clicked");
-                        }
-                    },
-                ]}
+                // rightIcons={[
+                //     {
+                //         iconImage: tempImageDoc,
+                //         onClick: () => {
+                //             console.log("Doc Icon Clicked");
+                //         }
+                //     },
+                //     {
+                //         iconImage: tempImageBell,
+                //         onClick: () => {
+                //             console.log("Bell Icon Clicked");
+                //         }
+                //     },
+                // ]}
             />
             <div
                 css={css`
