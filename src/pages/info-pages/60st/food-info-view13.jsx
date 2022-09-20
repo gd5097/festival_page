@@ -108,7 +108,7 @@ export default function FoodInfoViewPage13() {
         <div
             css={css`
                 background-color: white;
-                height: 120vh;
+                height: 160vh;
             `}
         >
             <DefalutLayout>
