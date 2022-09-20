@@ -2,51 +2,58 @@ import React from 'react';
 import { css, useTheme } from '@emotion/react';
 import PropTypes from 'prop-types';
 
-import backArrow from '../images/back-arrow.png';
 
 
 
-export default function Header({ backActivated, icons}){
+
+export default function Header({ title, leftIcon, rightIcons}){
     const theme = useTheme();
 
     return(
+        
         <div 
             // 헤더 컨테이너
             css={css`
                 display: flex;
-                position: relative;
-
+                position: fixed;
+                
+                top: 0px;
                 align-items: center;
 
                 padding: 0px 22px;
+                width: stretch;
                 height: 48px;
-                background-color: orange;   // for test
-                //background-color: ${theme.colors.primary1};
+
+                //z-index: 99;
+                
+                background-color: ${theme.colors.primary1};
                 
         `}>
+            {leftIcon !== null ?
             <button
-                // 뒤로가기
+                // 좌측 아이콘
                 type='button'
-                onClick={() => {
-                    console.log('Back is Clicked!');
-                }}
+                onClick={leftIcon?.onClick}
                 css={css`
                     background-color: transparent;
+                    
+                    
                     border: 0;
                     padding: 0;
                 `}
             >
-                { backActivated ?
-                    <img src={backArrow}
-                            css={css`
-                        object-fit: cover;
-                `}/> : null}
-            </button>
-
+                <img src={leftIcon?.iconImage}
+                    css={css`
+                    object-fit: cover;
+                `}/>
+            </button> : null}
+            
+            {rightIcons !== null ?
+            
             <button
                 // 2번 아이콘
                 type='button'
-                onClick={icons[1]?.onClick}
+                onClick={rightIcons[1]?.onClick}
                 css={css`
                     margin-left: auto;
                     background-color: transparent;
@@ -55,30 +62,33 @@ export default function Header({ backActivated, icons}){
                 `}
             >
                 <img
-                    src={icons[1]?.iconImage}
+                    src={rightIcons[1]?.iconImage}
                     css={css`
                         object-fit: cover;
                 `}/>
             </button>
 
+            : null
+            }
+            
+            {rightIcons !== null ?  
             <button
-                // 1번 아이콘 (최우측)
-                type='button'
-                onClick={icons[0]?.onClick}
+            // 1번 아이콘 (최우측)
+            type='button'
+            onClick={rightIcons[0]?.onClick}
+            css={css`
+                margin-left: 30px;
+                background-color: transparent;
+                border: 0;
+                padding: 0;
+            `}>
+            <img 
+                src={rightIcons[0]?.iconImage}
                 css={css`
-                    margin-left: 30px;
-                    background-color: transparent;
-                    border: 0;
-                    padding: 0;
-                `}
-            >
-                <img 
-                    src={icons[0]?.iconImage}
-                    css={css`
-                        align-self: flex-end;
-                        object-fit: cover;
-                `}/>
-            </button>
+                    align-self: flex-end;
+                    object-fit: cover;
+            `}/>
+            </button> : null }
 
             <div
                 // 페이지 이름
@@ -91,20 +101,26 @@ export default function Header({ backActivated, icons}){
                     color: ${theme.colors.white};
                     font-size: 1.4rem;
                 `}>
-                게시판
+                {title}
             </div>
 
             
+        
         </div>
     );
 }
 
 
 Header.propTypes = {
+    title: PropTypes.string,
     backActivated: PropTypes.bool,
-    icons: PropTypes.object.isRequired,
+    leftIcon: PropTypes.object,
+    rightIcons: PropTypes.array,
 };
 
 Header.defaultProps = {
+    title: 'Default',
     backActivated: false,
+    leftIcon: null,
+    rightIcons: null,
 };

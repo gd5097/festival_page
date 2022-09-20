@@ -5,16 +5,23 @@ import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 const Button = styled(Link)`
+    position: relative;
+
+    top: ${props => `${props.positiony}vw`};
+    left: ${props => `${props.positionx}vw`};
+
     display: flex;
 
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
 
-    background-color: teal; // for test
+    white-space: nowrap;
+
+    //background-color: teal; // for test
     border-radius: 50%;
 
-    width: ${props => `${props.size}px`};
-    height: ${props => `${props.size}px`};
+    width: ${props => `${props.size}vw`};
+    height: ${props => `${props.size}vw`};
 
     padding: 0;
     border: 0;
@@ -22,13 +29,23 @@ const Button = styled(Link)`
     
 `
 
-export default function TempButton({size, text, link}) {
+export default function TempButton({size, image, link, positionx, positiony, onClick}) {
     return(
         <Button
             size={size}
+            positionx={positionx}
+            positiony={positiony}
+            onClick={onClick}
             to={link}
         >
-            {text}
+            <img
+                src={image}
+                css={css`
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                `}
+            />
         </Button>
     );
 }

@@ -1,30 +1,51 @@
 import React from 'react';
+import { css } from '@emotion/react';
 
 import DefalutLayout from '../layouts/default';
 import Header from '../components/header';
 
+import arrowIcon from '../images/back-arrow.png';
 
-export default function MiraeSuqarePage() {
+import { useNavigate } from 'react-router-dom';
+import TimeInformationBox from '../components/time-information-box';
+import ShowListButton from '../components/show-list-button';
+
+export default function MiraeSquarePage() {
+    const navigate = useNavigate();
+
     return(
         <DefalutLayout>
-            <Header backActivated 
-            icons={[
-                {
-                    iconImage: tempImageDoc,
-                    onClick: () => {
-                        console.log("Doc Icon Clicked");
+            <div
+                // 헤더를 위한 여백
+                css={css`
+                    height: 48px;
+                `}
+            />
+            <Header 
+                title={'미래광장'}
+                leftIcon={
+                    {
+                        iconImage: arrowIcon,
+                        onClick: () => {
+                            navigate(-1);
+                        }
                     }
-                },
-                {
-                    iconImage: tempImageBell,
-                    onClick: () => {
-                        console.log("Bell Icon Clicked");
-                    }
-                },
-            ]}/>
-            <div>
-                미래광장
+                }
+            />
+            <TimeInformationBox />
+            <div
+                // 구분선
+                css={css`
+                    background-color: rgba(255, 255, 255, 0.3);
+                    width: 90vw;
+                    margin: 24px auto;
+                    height: 1px;
+                `}
+            >
+
             </div>
+            <ShowListButton link='/mirae-square/list'/>
+            
         </DefalutLayout>
     );
 }

@@ -16,7 +16,6 @@ export default function Weather() {
 
                 padding: 0px 20px;
 
-                background-color: tomato;
                 height: 18px;
                 margin-top: 11px;
             `}
