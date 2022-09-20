@@ -41,7 +41,7 @@ export default function Weather() {
                     font-size: 1.0rem;
                 `}
             >
-                29°C
+                16°C
             </div>
         </div>
     );
