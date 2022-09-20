@@ -14,10 +14,9 @@ import HorizontalInfoIndicator from '../../../components/horizontal-info-indicat
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/swiper.scss";
 
-import image1 from '../../../images/ham7-1.jpg';
-import image2 from '../../../images/ham7-2.jpg';
-import image3 from '../../../images/ham7-3.jpg';
-import image4 from '../../../images/ham7-4.jpg';
+import image1 from '../../../images/ham15-1.jpg';
+import image2 from '../../../images/ham15-2.jpg';
+
 import styled from '@emotion/styled';
 
 const Pimg = styled.img`
@@ -29,73 +28,37 @@ const Pimg = styled.img`
     
 `
 
-export default function FoodInfoViewPageHam7() {
+export default function FoodInfoViewPageHam15() {
 
     const theme = useTheme();
     const params = useParams();
-    useEffect(() => {
-        console.log(params);
-        //console.log(match.params);
-     }, [])
+    // useEffect(() => {
+    //     console.log(params);
+    //     //console.log(match.params);
+    //  }, [])
      
     const navigate = useNavigate();
 
      const food = {
-        id: 7,
-        title: '강낭콩딱지',
-        categories: ['치장품'],
+        id: 15,
+        title: '꽃갈피',
+        categories: ['사진'],
         menu: [
             {
-                foodName: '마우스패드',
-                foodCost: 7000,
-            },
-            {
-                foodName: '그립톡',
-                foodCost: 6500,
-            },
-            {
-                foodName: '키링',
+                foodName: '프로필사진set (사진촬영+보정본인화+보정본전송)',
                 foodCost: 5000,
             },
             {
-                foodName: '다꾸용스티커',
-                foodCost: 2500,
-            },
-            {
-                foodName: '다꾸용스티커반짝이',
-                foodCost: 2800,
-            },
-            {
-                foodName: '라이터',
+                foodName: '촬영 전체 전송',
                 foodCost: 2000,
             },
             {
-                foodName: '버섯/에잇볼 키링',
-                foodCost: 5000,
+                foodName: '추가인화',
+                foodCost: 1000,
             },
             {
-                foodName: '고냥희 리무버블 스티커',
-                foodCost: 2500,
-            },
-            {
-                foodName: '먼지 지비츠',
-                foodCost: 4000,
-            },
-            {
-                foodName: '먼지키링',
-                foodCost: 6900,
-            },
-            {
-                foodName: '야광팔찌 (1개)',
-                foodCost: 300,
-            },
-            {
-                foodName: '야광팔찌 (2개)',
+                foodName: '종이액자',
                 foodCost: 500,
-            },
-            {
-                foodName: '야광팔찌 (3개)',
-                foodCost: 800,
             },
         ],
      }
@@ -104,7 +67,7 @@ export default function FoodInfoViewPageHam7() {
         <div
             css={css`
                 background-color: white;
-                height: 110vh;
+                height: 100vh;
             `}
         >
             <DefalutLayout>
@@ -140,14 +103,11 @@ export default function FoodInfoViewPageHam7() {
                         navigation //*
                         pagination={{ clickable: true }} //*
                         scrollbar={{ draggable: true }} //*
-                        onSwiper={(swiper) => console.log(swiper)}
                         //onSlideChange={(swiper) => setindex(swiper.realIndex)}
                     >
                         <SwiperSlide> <Pimg src={image1}/> </SwiperSlide>
                         <SwiperSlide> <Pimg src={image2}/> </SwiperSlide>
-                        <SwiperSlide> <Pimg src={image3}/> </SwiperSlide>
-                        <SwiperSlide> <Pimg src={image4}/> </SwiperSlide>
-                        </Swiper>
+                       </Swiper>
                 </div>
                 <div
                     // ID | 이름 | 분류 컨테이너
