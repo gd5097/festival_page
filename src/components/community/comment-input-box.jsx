@@ -3,13 +3,14 @@ import { css, useTheme } from '@emotion/react';
 import { useForm } from 'react-hook-form';
 
 import sendIcon from '../../images/send.png';
-import axios from 'axios';
 import useAuth from '../../hooks/use-auth';
+import { useAxios } from '../../context/axios';
 
 export default function CommentInputBox({ postId, onSubmit, parent }) {
     const { register, handleSubmit } = useForm();
     const theme = useTheme();
     const auth = useAuth();
+    const axios = useAxios();
 
     return(
         <form
@@ -17,7 +18,7 @@ export default function CommentInputBox({ postId, onSubmit, parent }) {
             onSubmit={
                 handleSubmit(async (data) => {
                     await axios.post(
-                        `http://52.79.44.217/posts/${postId}/comments`,
+                        `/posts/${postId}/comments`,
                         {
                             ...data,
                             parentId: parent?.id,

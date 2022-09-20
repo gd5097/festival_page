@@ -12,6 +12,7 @@ import styled from '@emotion/styled';
 import axios from 'axios';
 import { setUncaughtExceptionCaptureCallback } from 'process';
 import useAuth from '../hooks/use-auth';
+import { useAxios } from '../context/axios';
 
 const Label = styled.div`
     color: #12183F;
@@ -57,6 +58,8 @@ export default function LoginPage() {
     //     console.log(auth.auth);
     //     {auth.auth === {} ? console.log('yes') : console.log('no')}
     // },[])
+
+    const axios = useAxios();
 
     return(
         <div
@@ -129,7 +132,7 @@ export default function LoginPage() {
                         onSubmit={handleSubmit((tempData) => {
                             console.log(JSON.stringify(tempData));
 
-                            axios.post('http://52.79.44.217/authentications',
+                            axios.post('/authentications',
                                 JSON.stringify(tempData),{
                                         headers: { "Content-Type": `application/json`}
                                     }

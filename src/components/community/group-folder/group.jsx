@@ -8,15 +8,17 @@ import PostButton from '../post-button';
 import axios from 'axios';
 import useAuth from '../../../hooks/use-auth';
 import { useNavigate } from 'react-router-dom';
+import { useAxios } from '../../../context/axios';
 
 export default function Group() {
     const time = moment().format('DD/MM HH:MM');
     const auth = useAuth();
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
+    const axios = useAxios();
 
     useEffect(() => {
-        axios.get('http://52.79.44.217/posts?categoryId=1',{
+        axios.get('/posts?categoryId=1',{
                 headers: {
                     Authorization : auth.auth,
                 }
