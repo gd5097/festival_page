@@ -82,7 +82,7 @@ export default function FoodInfoViewPageHam4() {
         <div
             css={css`
                 background-color: white;
-                height: 100vh;
+                height: 140vh;
             `}
         >
             <DefalutLayout>
