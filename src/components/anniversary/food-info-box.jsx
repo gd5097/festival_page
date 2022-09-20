@@ -8,13 +8,13 @@ import CategoryIndicator from '../category-indicator';
 import NumberBox from '../number-box';
 import { Link } from 'react-router-dom';
 
-export default function FoodInfoBox( {data} ){
+export default function FoodInfoBox( {data, page} ){
     const theme = useTheme();
 
     return(
         <Link 
             // 전체 컨테이너
-            to={`/ham-square/food-info-view/${data.id}`}
+            to={`/${page}/food-info-view/${data.id}`}
             css={css`
                 display: grid;
                 grid-template-columns: auto 1fr auto;

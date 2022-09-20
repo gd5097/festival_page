@@ -140,6 +140,7 @@ export default function FoodList60st(){
             {list.map((item) => (
                 <FoodInfoBox 
                     key={`food-info-${item.id}`}
+                    page={'anniversary'}
                     data={item}
                 />
             ))}
