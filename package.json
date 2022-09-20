@@ -2,7 +2,6 @@
   "name": "knu-festival",
   "version": "1.0.0",
   "description": "강원대학교 축제 홈페이지",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
     "prepublish": "rimraf dist",
@@ -14,13 +13,10 @@
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.2",
     "@parcel/transformer-sass": "^2.7.0",
-    "axios": "^0.27.2",
     "buffer": "^6.0.3",
     "husky": "^8.0.1",
     "parcel": "^2.7.0",
     "process": "^0.11.10",
-    "prop-types": "^15.8.1",
-    "react-hook-form": "^7.35.0",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
@@ -33,6 +29,9 @@
     "react-router-dom": "^6.3.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "prop-types": "^15.8.1",
+    "react-hook-form": "^7.36.0",
+    "axios": "^0.27.2",
     "swiper": "^8.4.2"
   }
 }

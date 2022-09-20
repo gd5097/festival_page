@@ -19,6 +19,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: CI
+        run: npm ci
+
       - name: Build
         run: npm run build
 
