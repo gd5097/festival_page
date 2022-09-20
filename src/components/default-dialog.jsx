@@ -84,7 +84,7 @@ export default function DefaultDialog( { setDialogOpen, functions, infoText } ) 
             >
                 {functions[0].name}
             </button>
-            <button
+            {/* <button
                 // 첫 번째 버튼
                 type='button'
                 onClick={functions[1]?.onClick}
@@ -101,7 +101,7 @@ export default function DefaultDialog( { setDialogOpen, functions, infoText } ) 
                 `}
             >
                 {functions[1]?.name}
-            </button>
+            </button> */}
         
             </div>
         </div>

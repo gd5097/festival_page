@@ -77,10 +77,18 @@ export default function HomeBox() {
                 link={'/community'} 
             />
             
-            <TempButton
+            <ComTempButton
                 size={50}
                 positionx={50}
                 positiony={-27}
+                onClick={() => {
+                    if(auth.auth === ""){
+                        showDialog();
+                    }
+                    else{
+                        navigate('/community');
+                    }
+                }}
                 image={yeonjeogjiImage}
                 link={'/yeonjeogji'} 
             />
@@ -113,20 +121,13 @@ export default function HomeBox() {
             {dialogOpen && 
                 <DefaultDialog
                     setDialogOpen={setDialogOpen}
-                    infoText={'게시판 이용시 로그인이 필요합니다.'}
+                    infoText={'준비 중입니다!'}
                     functions={[
                         {
-                            name: '회원가입',
+                            name: '닫기',
                             color: '#12183f',
                             onClick: () => {
-                                navigate('/sign-up');
-                            }
-                        },
-                        {
-                            name: '로그인',
-                            color: '#12183f',
-                            onClick: () => {
-                                navigate('/login');
+                                navigate('/');
                             }
                         },
                     ]}
