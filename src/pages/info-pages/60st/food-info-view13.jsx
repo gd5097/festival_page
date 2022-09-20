@@ -24,7 +24,7 @@ const Pimg = styled.img`
     position: relative;
     top: -50px;
 
-    width: 100vw;
+    width: 120vw;
     
 `
 

@@ -21,7 +21,7 @@ import styled from '@emotion/styled';
 const Pimg = styled.img`
     
     position: relative;
-    top: -50px;
+    top: -20px;
 
     width: 100vw;
     

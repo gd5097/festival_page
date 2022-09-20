@@ -15,7 +15,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/swiper.scss";
 
 import image1 from '../../../images/60st10-1.jpg';
-import image2 from '../../../images/60st10-2.jpg';
+
 import styled from '@emotion/styled';
 
 const Pimg = styled.img`
@@ -103,7 +103,7 @@ export default function FoodInfoViewPage10() {
                         //onSlideChange={(swiper) => setindex(swiper.realIndex)}
                     >
                         <SwiperSlide> <Pimg src={image1}/> </SwiperSlide>
-                        <SwiperSlide> <Pimg src={image2}/> </SwiperSlide>
+                        
                         </Swiper>
                 </div>
                 <div

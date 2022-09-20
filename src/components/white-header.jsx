@@ -20,6 +20,8 @@ export default function Header({ title, leftIcon, rightIcons}){
                 top: 0px;
                 align-items: center;
 
+                z-index: 99;
+
                 padding: 0px 22px;
                 width: stretch;
                 height: 48px;
