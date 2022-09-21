@@ -49,7 +49,7 @@ export default function FoodInfoViewPage6() {
             },
             {
                 foodName: '새우 불초밥',
-                foodCost: 12000,
+                foodCost: 10000,
             },
         ],
      }
