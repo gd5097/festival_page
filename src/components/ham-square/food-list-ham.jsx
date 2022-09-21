@@ -7,7 +7,7 @@ import image2 from '../../images/ham2-1.jpg';
 import image3 from '../../images/ham3-1.jpg';
 import image4 from '../../images/ham4-1.jpg';
 import image5 from '../../images/ham5-1.jpg';
-import image6 from '../../images/ham6-1.jpg';
+import image6 from '../../images/ham6-2.jpg';
 import image7 from '../../images/ham7-1.jpg';
 import image8 from '../../images/ham8-1.jpg';
 import image9 from '../../images/ham9-1.jpg';
@@ -105,7 +105,7 @@ export default function FoodListHam(){
         {
             id: 10,
             title: 'SBBC',
-            image: image11,
+            image: image10,
             category: '의류/굿즈',
             menu: 'SBBC T-shirt, SBBC Pants',
         },

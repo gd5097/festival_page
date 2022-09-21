@@ -14,8 +14,8 @@ import HorizontalInfoIndicator from '../../../components/horizontal-info-indicat
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/swiper.scss";
 
-import image1 from '../../../images/ham6-1.jpg';
-import image2 from '../../../images/ham6-2.jpg';
+import image2 from '../../../images/ham6-1.jpg';
+import image1 from '../../../images/ham6-2.jpg';
 import styled from '@emotion/styled';
 
 const Pimg = styled.img`
