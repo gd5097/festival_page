@@ -35,7 +35,7 @@ export default function AnniversaryPage() {
                     }
                 }
             />
-            <TimeInformationBox text={'주점/푸드트럭'} time={'운영시간 28:00-02:00'}/>
+            <TimeInformationBox text={'주점/푸드트럭'} time={'운영시간 18:00-02:00'}/>
             <div
                 // 구분선
                 css={css`
