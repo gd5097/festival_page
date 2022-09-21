@@ -129,7 +129,7 @@ export default function FoodList60st(){
             title: '감자아일랜드',
             image: image15,
             category: '주류',
-            menu: '곰두리맥ㅈ, 포타페일에일, 쥬씨랜드 IPA',
+            menu: '곰두리맥주, 포타페일에일, 쥬씨랜드 IPA',
         },
     ]
 
