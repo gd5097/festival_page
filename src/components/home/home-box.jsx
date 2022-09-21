@@ -127,7 +127,7 @@ export default function HomeBox() {
                             name: '닫기',
                             color: '#12183f',
                             onClick: () => {
-                                navigate('/');
+                                setDialogOpen(false);
                             }
                         },
                     ]}
