@@ -45,11 +45,11 @@ export default function FoodInfoViewPage6() {
         menu: [
             {
                 foodName: '소고기 불초밥',
-                foodCost: 10000,
+                foodCost: 12000,
             },
             {
                 foodName: '새우 불초밥',
-                foodCost: 10000,
+                foodCost: 12000,
             },
         ],
      }
