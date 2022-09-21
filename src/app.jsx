@@ -65,7 +65,7 @@ import FoodInfoViewPage15 from './pages/info-pages/60st/food-info-view15';
 function App() {
     return(        
         <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/mirae-square" element={<MiraeSquarePage />} />
             <Route path="/anniversary" element={<AnniversaryPage />} />
