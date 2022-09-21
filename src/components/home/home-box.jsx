@@ -77,18 +77,10 @@ export default function HomeBox() {
                 link={'/community'} 
             />
             
-            <ComTempButton
+            <TempButton
                 size={50}
                 positionx={50}
                 positiony={-27}
-                onClick={() => {
-                    if(auth.auth === ""){
-                        showDialog();
-                    }
-                    else{
-                        navigate('/community');
-                    }
-                }}
                 image={yeonjeogjiImage}
                 link={'/yeonjeogji'} 
             />

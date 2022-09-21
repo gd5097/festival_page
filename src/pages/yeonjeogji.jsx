@@ -72,13 +72,13 @@ export default function CommunityPage() {
                         setCurrentCommunity('all');
                     }}    
                 />
-                <NavigationButton
+                {/* <NavigationButton
                     text={'동아리'}
                     abled={currentCommunity === 'group' ? true : false}
                     onClick={() => {
                         setCurrentCommunity('group');
                     }}
-                />
+                /> */}
                 <NavigationButton
                     text={'연예인'}
                     abled={currentCommunity === 'star' ? true : false}

@@ -67,27 +67,41 @@ export default function AllPage() {
         `}>공연의 전체 일정을 확인해보세요.</div>
 
             <Day day={'Day 1'} date={'9/20 (화)'}/>
-            <MiddleTag contnet={'밴드동아리'}/>
-            <SmallTag first={'꾼'} second={'22:00~22:20'}/>
-            <SmallTag first={'더울림'} second={'X'}/>
-            <SmallTag first={'TONE'} second={'X'}/>
-            <SmallTag first={'RMPC'} second={'X'}/>
+            <SmallTag first={'리베르타스(교직원 밴드)'} second={'21:00'}/>
+            <SmallTag first={'noisefactory(도청밴드)'} second={'21:10'}/>
+            <SmallTag first={'놀이패한마당'} second={'21:20'}/>
+            <SmallTag first={'더울림'} second={'21:40'}/>
+            <SmallTag first={'꾼'} second={'22:00'}/>
+            <SmallTag first={'TONE'} second={'22:20'}/>
+            <SmallTag first={'기타치노'} second={'22:40'}/>
+            <SmallTag first={'울음큰새'} second={'23:00'}/>
+            <SmallTag first={'RMPC'} second={'23:30'}/>
 
+            <div
+                css={css`
+                    height: 20px;
+                `}
+            >
+
+            </div>
             <Day day={'Day 2'} date={'9/21 (수)'}/>
-            <MiddleTag contnet={'댄스동아리'}/>
-            <SmallTag first={'브로커'} second={'X'}/>
-            <SmallTag first={'이너스'} second={'X'}/>
-            <SmallTag first={'아젤리아'} second={'X'}/>
-            <SmallTag first={'Co’k'} second={'X'}/>
-            <SmallTag first={'놀이패한마당'} second={'X'}/>
-            <MiddleTag contnet={'연예인'}/>
-            <SmallTag first={'영앤리치'} second={'X'}/>
-            <SmallTag first={'오반'} second={'X'}/>
+            
+            <SmallTag first={'아젤리아'} second={'20:00'}/>
+            <SmallTag first={'이너스'} second={'20:20'}/>
+            <SmallTag first={'Co `k'} second={'20:35'}/>
+            <SmallTag first={'브로커'} second={'20:50'}/>
+            <SmallTag first={'축하공연'} second={'21:00'}/>
+            
+            <div
+                css={css`
+                    height: 20px;
+                `}
+            >
 
+            </div>
             <Day day={'Day 3'} date={'9/22 (목)'}/>
-            <MiddleTag contnet={'연예인'}/>
-            <SmallTag first={'자이언티'} second={'X'}/>
-            <SmallTag first={'펀치'} second={'X'}/>
+            
+            <SmallTag first={'축하공연'} second={'21:00'}/>
 
         </div>
 
