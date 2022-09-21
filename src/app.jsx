@@ -59,6 +59,7 @@ import FoodInfoViewPageHam20 from './pages/info-pages/ham-square/food-info-view2
 import FoodInfoViewPageHam21 from './pages/info-pages/ham-square/food-info-view21';
 import FoodInfoViewPageHam22 from './pages/info-pages/ham-square/food-info-view22';
 import FoodInfoViewPageHam23 from './pages/info-pages/ham-square/food-info-view23';
+import FoodInfoViewPage15 from './pages/info-pages/60st/food-info-view15';
 
 
 function App() {
@@ -100,6 +101,7 @@ function App() {
                 <Route path="/anniversary/food-info-view/12" element={<FoodInfoViewPage12 />} />
                 <Route path="/anniversary/food-info-view/13" element={<FoodInfoViewPage13 />} />
                 <Route path="/anniversary/food-info-view/14" element={<FoodInfoViewPage14 />} />
+                <Route path="/anniversary/food-info-view/15" element={<FoodInfoViewPage15 />} />
             {/*미래광장*/}
 
             {/*함인섭광장*/}

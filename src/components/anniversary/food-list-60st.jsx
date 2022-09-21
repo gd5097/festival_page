@@ -16,6 +16,7 @@ import image11 from '../../images/60st11-1.jpg';
 import image12 from '../../images/60st12-1.jpg';
 import image13 from '../../images/60st13-1.jpg';
 import image14 from '../../images/60st14-1.jpg';
+import image15 from '../../images/60st15-1.jpg';
 
 
 
@@ -122,6 +123,13 @@ export default function FoodList60st(){
             image: image14,
             category: '소야볶',
             menu: '메쏘야, 로쏘야',
+        },
+        {
+            id: 15,
+            title: '감자아일랜드',
+            image: image15,
+            category: '주류',
+            menu: '곰두리맥ㅈ, 포타페일에일, 쥬씨랜드 IPA',
         },
     ]
 
