@@ -184,7 +184,7 @@ export default function FoodInfoViewPageHam22() {
 
                         font-size: 1.1rem;
                     `}>
-                        옷 가격 개별 문의
+                        메뉴
                     </div>
                     {food.menu.map((item) => (
                         <HorizontalInfoIndicator 

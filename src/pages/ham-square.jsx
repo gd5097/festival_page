@@ -33,7 +33,7 @@ export default function HamSquarePage() {
                     }
                 }
             />
-            <TimeInformationBox text={'푸드트럭/플리마켓'} time={'운영시간 10:00-18:00'}/>
+            <TimeInformationBox text={'푸드트럭/플리마켓'} time={'운영시간 11:00-17:00'}/>
             <div
                 // 구분선
                 css={css`
@@ -48,6 +48,8 @@ export default function HamSquarePage() {
             <div
                 css={css`
                     //margin-bottom: 60px;
+                    width: 85vw;
+                    margin: 0px auto;
                 `}
             >
                 <img
@@ -62,7 +64,7 @@ export default function HamSquarePage() {
             <div
                 css={css`
                     
-                    margin-top: 32px;
+                    margin-top: 16px;
                     margin-bottom: 32px;
                     margin-left: auto;
                 `}

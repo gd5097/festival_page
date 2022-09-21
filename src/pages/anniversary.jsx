@@ -35,7 +35,7 @@ export default function AnniversaryPage() {
                     }
                 }
             />
-            <TimeInformationBox text={'주점/푸드트럭'} time={'운영시간 20:00-04:00'}/>
+            <TimeInformationBox text={'주점/푸드트럭'} time={'운영시간 28:00-02:00'}/>
             <div
                 // 구분선
                 css={css`
@@ -48,6 +48,8 @@ export default function AnniversaryPage() {
             <div
                 css={css`
                     //margin-bottom: 60px;
+                    width: 85vw;
+                    margin: 0px auto;
                 `}
             >
                 <img
@@ -62,7 +64,7 @@ export default function AnniversaryPage() {
             <div
                 css={css`
                     
-                    margin-top: 32px;
+                    margin-top: 16px;
                     margin-bottom: 32px;
                     margin-left: auto;
                 `}
