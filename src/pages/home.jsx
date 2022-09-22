@@ -9,6 +9,7 @@ import HomeBox from '../components/home/home-box';
 import tempImageBell from '../images/bell.png';
 import tempImageDoc from '../images/document.png';
 import tempImageArrow from '../images/back-arrow.png';
+import Footer from '../components/footer';
 
 export default function HomePage() {
     return(
@@ -45,6 +46,7 @@ export default function HomePage() {
             </div>
             <Weather />
             <HomeBox />
+            <Footer />
         </DefalutLayout>
     );
 }
